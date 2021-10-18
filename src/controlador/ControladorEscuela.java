@@ -57,28 +57,6 @@ public class ControladorEscuela implements ActionListener {
             Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    /*switch (e.getActionCommand()) {
-    
-        case "Registrar":
-    {
-        try {
-            agregarEscuela();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-            break;
-        case "Volver":
-            volverMenu();
-            break;
-        default:
-            break;
-
-  }*/
 }
   
   public void agregarEscuela() throws ClassNotFoundException, IllegalAccessException, InstantiationException {

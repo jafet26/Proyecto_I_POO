@@ -20,7 +20,7 @@ import logicadenegocios.*;
  */
 public class Conexion {
   //Jafet
-  //String connectionURL = "jdbc:sqlserver://localhost\SQLEXPRESS01:1434;databaseName=GestorPlanEstudio;user=usuario;password=1234;";
+  //String connectionURL = "jdbc:sqlserver://localhost\\SQLEXPRESS01:1434;databaseName=GestorPlanEstudio;user=usuario;password=1234;";
   
   //Daniel
   String connectionURL = "jdbc:sqlserver://DESKTOP-N2DB42H\\ADMIN:1433;databaseName=GestorPlanEstudio;user=admin;password=123;";
