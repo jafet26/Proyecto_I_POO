@@ -64,8 +64,6 @@ public class ControladorEscuela implements ActionListener {
       try{
           String codigoEscuela = vistaRegistroEscuela.txtCodigo.getText();
           String nombreEscuela = vistaRegistroEscuela.txtNombre.getText();
-          //logicadenegocios = new Escuela(codigoEscuela, nombreEscuelta);
-          //Escuela escuelaActual = dao.registrarEscuela(codigoEscuela,nombreEscuelta);
           String resul = dao.registrarEscuela(codigoEscuela, nombreEscuela);
           if (resul != null) {
               //vistaRegistroEscuela.setVisible(false);
