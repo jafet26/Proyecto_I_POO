@@ -1,6 +1,9 @@
 package logicadenegocios;
 
-import java.sql.SQLException;
+import java.sql.Connection;
+
+
+import vista.RegistrarEscuela;
 
 /**
  *
@@ -8,9 +11,7 @@ import java.sql.SQLException;
  */
 public class Escuela {
     
-  Conexion conect = new Conexion();   
-    
-  private int codigo;
+  private String codigo;
   private String nombreEscuela;
   
   /**
@@ -25,25 +26,17 @@ public class Escuela {
    * @param pCodigo se refiere al codigo que tiene la Escuela
    * @param pNombreEscuela indica el nombre de la Escuela 
    */
-  public Escuela(int pCodigo, String pNombreEscuela) {
+  public Escuela(String pCodigo, String pNombreEscuela) {
       
     pCodigo = codigo;
     pNombreEscuela = nombreEscuela;
     
   }
   
-  public void RegistrarEscuela(String CodigoEscuela, String NombreEscuela) throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException{
-    
-    String st ="insert into Escuela values ('"+CodigoEscuela+"', '"+NombreEscuela+"');";
-    conect.getConexion().createStatement().execute(st);
-    System.out.println("Se ha registrado una escuela");
-    
-  }
-  
   /*
    * Metodos GETTERS
    */
-  public int getCodigo() {
+  public String getCodigo() {
       
     return codigo;
         
@@ -58,7 +51,7 @@ public class Escuela {
   /*
    * Metodos SETTERS
    */
-  public void setCodigo(int pCodigo) {
+  public void setCodigo(String pCodigo) {
       
     pCodigo = codigo;
     

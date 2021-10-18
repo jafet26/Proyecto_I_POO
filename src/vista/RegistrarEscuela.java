@@ -5,6 +5,13 @@
  */
 package vista;
 
+import controlador.ControladorEscuela;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import logicadenegocios.Escuela;
+import proyecto_i_poo.Conexion;
+
 /**
  *
  * @author USUARIO
@@ -16,7 +23,13 @@ public class RegistrarEscuela extends javax.swing.JFrame {
      */
     public RegistrarEscuela() {
         initComponents();
-    }
+       
+    
+   
+    } 
+    public void volverMenu(){
+    this.setVisible(false);
+  }
 
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT
@@ -109,10 +122,11 @@ public class RegistrarEscuela extends javax.swing.JFrame {
                                 .addGroup(panelRegistroEscuelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroEscuelaLayout.createSequentialGroup()
+                            .addGroup(panelRegistroEscuelaLayout.createSequentialGroup()
                                 .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnLimpiar))))
+                                .addComponent(btnLimpiar)
+                                .addGap(32, 32, 32))))
                     .addGroup(panelRegistroEscuelaLayout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(btnVolver))
@@ -160,15 +174,13 @@ public class RegistrarEscuela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-       
-      MenuOpciones ventanaMenu = new MenuOpciones();
+      /*MenuOpciones ventanaMenu = new MenuOpciones();
       ventanaMenu.setVisible(true);
-      this.dispose();
-      
+      this.dispose();*/
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -224,7 +236,7 @@ public class RegistrarEscuela extends javax.swing.JFrame {
     private javax.swing.JLabel lblNotaCodigo;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelRegistroEscuela;
-    private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtCodigo;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

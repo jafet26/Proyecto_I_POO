@@ -5,6 +5,10 @@
  */
 package vista;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Daniel Vaglio 
@@ -213,7 +217,12 @@ public class MenuOpciones extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         
-      Inicio ventanaInicio = new Inicio();
+      Inicio ventanaInicio = null;
+        try {
+            ventanaInicio = new Inicio();
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuOpciones.class.getName()).log(Level.SEVERE, null, ex);
+        }
       ventanaInicio.setVisible(true);
       this.dispose();
       

@@ -8,8 +8,10 @@ package proyecto_i_poo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import vista.*;
+import controlador.*;
+import dao.EscuelaDAO;
+import logicadenegocios.*;
 
 
 /**
@@ -17,55 +19,43 @@ import java.util.logging.Logger;
  * @author chava
  */
 public class Conexion {
+  //Jafet
+  //String connectionURL = "jdbc:sqlserver://localhost\SQLEXPRESS01:1434;databaseName=GestorPlanEstudio;user=usuario;password=1234;";
   
-  String connectionURL = "jdbc:sqlserver://localhost\\SQLEXPRESS01:1434;databaseName=Express;user=usuario;password=1234;";
-        
-    Connection con = null;
+  //Daniel
+  String connectionURL = "jdbc:sqlserver://DESKTOP-N2DB42H\\ADMIN:1433;databaseName=GestorPlanEstudio;user=admin;password=123;";
+  Connection con = null;
     
-    public Connection Conexion() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
+  public Connection Conexion() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
         
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-        con = DriverManager.getConnection(connectionURL);
-        System.out.println("Conexión exitosa.");
-        return con;
-    }
+      Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
+      con = DriverManager.getConnection(connectionURL);
+      System.out.println("Conexión exitosa.");
+      return con;
+  }
+  
+  public Connection getConnection(){
+      return con;
+  }
+  
+  public void desconectar() {
+      try{
+          System.out.println("Cerrando conexion");
+          con.close();
+      } catch(SQLException ex){
+          System.out.println(ex.getErrorCode());
+      }
+  }
     
-    
-    
-    public static void main(String[] args) throws InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException{
-       /* 
-        try {
-            Login l = new Login();
-            l.setVisible(true);
-       
-            */ 
-        
-        
-        
-               
-            Conexion c = new Conexion();
-            c.Conexion();
-            
-            
-            /*
-            Insertar i = new Insertar();
-            //i.insertarUsuario("Nacho", "qwer", "Administrador", "zxcv");
-            
-            Eliminar e = new Eliminar();
-            //e.eliminarUsuario("Nacho");
-            
-            Modificar m = new Modificar();
-            //m.ModificarString("Usuario", "Correo", "jafetchm@gmail.com", "NombreUsuario", "JafetCH");
-            
-            Seleccionar s = new Seleccionar();
-            s.SeleccionarUsuario();
-            s.SeleccionarProveedor();
-            s.SeleccionarTelefonoProveedor();
-            
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-        }
-     */
-    }       
+  public static void main(String[] args) throws InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException{
+      Conexion c = new Conexion();
+      //c.Conexion();
+      RegistrarEscuela registro = new RegistrarEscuela();
+      EscuelaDAO modelo = new EscuelaDAO();
+      ControladorEscuela ctrl = new ControladorEscuela(registro, modelo);
+      Inicio inicio = new Inicio();
+      registro.setVisible(true);
+      
+  }       
 }
 
