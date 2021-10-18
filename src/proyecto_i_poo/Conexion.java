@@ -53,7 +53,7 @@ public class Conexion {
       RegistrarEscuela registro = new RegistrarEscuela();
       EscuelaDAO modelo = new EscuelaDAO();
       ControladorEscuela ctrl = new ControladorEscuela(registro, modelo);
-      Inicio inicio = new Inicio();
+      //Inicio inicio = new Inicio();
       registro.setVisible(true);
       
   }       
