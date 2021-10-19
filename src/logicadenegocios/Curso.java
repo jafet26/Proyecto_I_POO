@@ -8,8 +8,8 @@ public class Curso {
     
   private String codigoCurso;
   private String nombreCurso;
-  private int cantidadCreditos;
   private int horasLectivas;
+  private int cantidadCreditos;
   
   /**
    * Metodo Constructor Vacio

@@ -22,13 +22,15 @@ public class RegistrarEscuela extends javax.swing.JFrame {
      * Creates new form AgregarEscuela
      */
     public RegistrarEscuela() {
-        initComponents();
+      initComponents();
        
     
    
     } 
     public void volverMenu(){
-    this.setVisible(false);
+      MenuOpciones ventana = new MenuOpciones();
+      ventana.setVisible(false);
+      this.dispose();
   }
 
     /**

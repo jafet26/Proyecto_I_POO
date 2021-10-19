@@ -1,6 +1,6 @@
 package logicadenegocios;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -9,7 +9,7 @@ import java.util.Date;
 public class PlanDeEstudios {
     
   private int numeroPlan;
-  private Date fechaEntradaVigente;
+  private String fechaEntradaVigente;
   private int cantidadSemestres;
   
   /*
@@ -25,7 +25,7 @@ public class PlanDeEstudios {
    * @param pFechaEntradaVigente indica la fecha de vigencia del plan
    * @param pCantidadSemestres indica la cantidad de semestre que contiene el plan
    */
-  public PlanDeEstudios(int pNumeroPlan, Date pFechaEntradaVigente, int pCantidadSemestres) {
+  public PlanDeEstudios(int pNumeroPlan, String pFechaEntradaVigente, int pCantidadSemestres) {
     
     pNumeroPlan = numeroPlan;
     pFechaEntradaVigente = fechaEntradaVigente;
@@ -42,7 +42,7 @@ public class PlanDeEstudios {
       
   }
 
-  public Date getFechaEntradaVigente() {
+  public String getFechaEntradaVigente() {
    
     return fechaEntradaVigente;
     
@@ -63,7 +63,7 @@ public class PlanDeEstudios {
     
   }
   
-  public void setFechaEntradaVigencia(Date pFechaEntradaVigente) {
+  public void setFechaEntradaVigencia(String pFechaEntradaVigente) {
       
     pFechaEntradaVigente = fechaEntradaVigente;
     

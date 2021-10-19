@@ -10,7 +10,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import vista.*;
 import controlador.*;
+import dao.CursoDAO;
 import dao.EscuelaDAO;
+import dao.PlanDeEstudioDAO;
 import logicadenegocios.*;
 
 
@@ -53,8 +55,16 @@ public class Conexion {
       RegistrarEscuela registro = new RegistrarEscuela();
       EscuelaDAO modelo = new EscuelaDAO();
       ControladorEscuela ctrl = new ControladorEscuela(registro, modelo);
+      
+      RegistrarPlanDeEstudios registro2 = new RegistrarPlanDeEstudios();
+      PlanDeEstudioDAO modelo2 = new PlanDeEstudioDAO();
+      ControladorPlanDeEstudio ctrl2 = new ControladorPlanDeEstudio(registro2, modelo2);
+      
+      RegistrarCurso registro3 = new RegistrarCurso();
+      CursoDAO modelo3 = new CursoDAO();
+      ControladorCurso ctrl3 = new ControladorCurso(registro3, modelo3);
       //Inicio inicio = new Inicio();
-      registro.setVisible(true);
+      registro3.setVisible(true);
       
   }       
 }

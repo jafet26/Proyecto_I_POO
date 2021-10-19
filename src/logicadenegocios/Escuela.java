@@ -67,7 +67,7 @@ public class Escuela {
    * Metodo toString()
    * @return la informacion de la escuela contenida en una cadena de caracteres 
    */
-  public String toString() {
+  /*public String toString() {
       
     String msg;
     msg = "Codigo: " + codigo + "\n";
@@ -75,6 +75,6 @@ public class Escuela {
     
     return msg;
     
-  }
+  }*/
   
 }
