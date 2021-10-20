@@ -50,21 +50,11 @@ public class Conexion {
   }
     
   public static void main(String[] args) throws InstantiationException, IllegalAccessException, SQLException, ClassNotFoundException{
-      Conexion c = new Conexion();
-      //c.Conexion();
-      RegistrarEscuela registro = new RegistrarEscuela();
-      EscuelaDAO modelo = new EscuelaDAO();
-      ControladorEscuela ctrl = new ControladorEscuela(registro, modelo);
-      
-      RegistrarPlanDeEstudios registro2 = new RegistrarPlanDeEstudios();
-      PlanDeEstudioDAO modelo2 = new PlanDeEstudioDAO();
-      ControladorPlanDeEstudio ctrl2 = new ControladorPlanDeEstudio(registro2, modelo2);
-      
-      RegistrarCurso registro3 = new RegistrarCurso();
-      CursoDAO modelo3 = new CursoDAO();
-      ControladorCurso ctrl3 = new ControladorCurso(registro3, modelo3);
-      //Inicio inicio = new Inicio();
-      registro3.setVisible(true);
+      //Conexion c = new Conexion();
+           
+      MenuOpciones inicio = new MenuOpciones();
+      ControladorMenuOpciones controlador = new ControladorMenuOpciones(inicio);
+      controlador.vista.setVisible(true);
       
   }       
 }

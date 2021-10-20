@@ -16,15 +16,16 @@ import vista.RegistrarCurso;
  */
 public class ControladorCurso implements ActionListener {
   
-  public RegistrarCurso vistaRegistroCurso = new RegistrarCurso();
-  public Curso logicadenegocios;
-  public CursoDAO dao = new CursoDAO();
+  public RegistrarCurso vistaRegistroCurso;
+  public Curso curso;
+  public CursoDAO dao;
   
   //constructor
-  public ControladorCurso(RegistrarCurso pVistaRegistroCurso, CursoDAO pModelo) {
+  public ControladorCurso(RegistrarCurso pVistaRegistroCurso, Curso pCurso) {
       
     vistaRegistroCurso = pVistaRegistroCurso;
-    dao = pModelo;
+    curso = pCurso;
+    dao = new CursoDAO();
         
     this.vistaRegistroCurso.btnRegistrar.addActionListener(this);
     this.vistaRegistroCurso.btnVolver.addActionListener(this);
@@ -42,6 +43,9 @@ public class ControladorCurso implements ActionListener {
             Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    if (e.getSource() == vistaRegistroCurso.btnVolver) {
+        this.vistaRegistroCurso.setVisible(false);
+    }
 }
   
   public void agregarCurso() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -49,9 +53,12 @@ public class ControladorCurso implements ActionListener {
       try{
           String codigoCurso = vistaRegistroCurso.txtCodigoCurso.getText();
           String nombreCurso = vistaRegistroCurso.txtNombreCurso.getText();
-          int horasLectivas = vistaRegistroCurso.cbxHorasLectivas.getSelectedIndex();
-          int cantidadCreditos = vistaRegistroCurso.cbxCreditos.getSelectedIndex();
-          int numeroPlanEstudioCurso = vistaRegistroCurso.cbxCodigoPlanDeEstudios.getSelectedIndex();
+          //int horasLectivas = Integer.parseInt(vistaRegistroCurso.cbxHorasLectivas.getSelectedItem().toString());
+          //int cantidadCreditos = Integer.parseInt(vistaRegistroCurso.cbxCreditos.getSelectedItem().toString());
+          int horasLectivas = Integer.parseInt(vistaRegistroCurso.txtHorasLectivas.getText());
+          int cantidadCreditos = Integer.parseInt(vistaRegistroCurso.txtCreditos.getText());
+          int numeroPlanEstudioCurso = Integer.parseInt(vistaRegistroCurso.txtCodigoPlanDeEstudios.getText());
+          //int numeroPlanEstudioCurso = Integer.parseInt(vistaRegistroCurso.cbxCreditos.getSelectedItem().toString());
           int numeroBloqueSemestral = Integer.parseInt(vistaRegistroCurso.txtBloqueSemestral.getText());
           String codigoEscuela = vistaRegistroCurso.cbxEscuelas.getSelectedItem().toString();
           String resul = dao.registrarCurso(codigoCurso, nombreCurso, horasLectivas, cantidadCreditos,

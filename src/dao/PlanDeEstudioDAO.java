@@ -7,12 +7,15 @@ package dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Vector;
 import javax.swing.DefaultComboBoxModel;
 import logicadenegocios.Escuela;
+import logicadenegocios.PlanDeEstudios;
 import proyecto_i_poo.Conexion;
 
 /**
@@ -89,6 +92,33 @@ public class PlanDeEstudioDAO {
       }
       return resultado;
   }
+  
+  /*public Vector<PlanDeEstudios> mostrarPlanesEstudio(String pCodigoEscuela) {
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    Vector<PlanDeEstudios> datos = new Vector<PlanDeEstudios>();
+    PlanDeEstudios dat = null;
+    
+      try {
+          Connection conect = conexion.Conexion();
+          String sql = "Select NumeroPlanEstudio from PlanDeEstudio "
+                  + "where CodigoEscuelaPlanEstudio = " + pCodigoEscuela;
+          ps = conect.prepareStatement(sql);
+          rs = ps.executeQuery();
+          
+          //dat = new PlanDeEstudios();
+          
+          while (rs.next()) {
+              dat = new PlanDeEstudios();
+              dat.setNumeroPlan(rs.getInt("NumeroPlanEstudio"));
+              datos.add(dat);
+          }
+          rs.close();
+      } catch (Exception e) {
+          System.err.println(e.toString());
+      }
+      return datos;
+  }*/
     
     
     

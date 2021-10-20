@@ -101,12 +101,16 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="cbxHorasLectivas" alignment="0" pref="68" max="32767" attributes="0"/>
-                                          <Component id="cbxCreditos" alignment="0" pref="68" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="cbxHorasLectivas" alignment="0" pref="81" max="32767" attributes="0"/>
+                                      <Component id="cbxCreditos" alignment="0" pref="81" max="32767" attributes="0"/>
                                       <Component id="cbxEscuelas" alignment="0" pref="81" max="32767" attributes="0"/>
                                       <Component id="txtCodigoCurso" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtCreditos" min="-2" pref="68" max="-2" attributes="0"/>
+                                      <Component id="txtHorasLectivas" min="-2" pref="68" max="-2" attributes="0"/>
+                                      <Component id="txtCodigoPlanDeEstudios" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -145,16 +149,21 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblCreditos" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="cbxCreditos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtCreditos" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblNombre4" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="cbxHorasLectivas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHorasLectivas" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="lblNombre5" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="cbxCodigoPlanDeEstudios" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="cbxCodigoPlanDeEstudios" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCodigoPlanDeEstudios" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -261,6 +270,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbxEscuelasItemStateChanged"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxEscuelasActionPerformed"/>
           </Events>
           <AuxValues>
@@ -406,6 +416,36 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBloqueSemestral">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Microsoft Sans Serif" size="14" style="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCreditos">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Microsoft Sans Serif" size="14" style="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtHorasLectivas">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Microsoft Sans Serif" size="14" style="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCodigoPlanDeEstudios">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Sans Serif" size="14" style="0"/>

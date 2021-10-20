@@ -210,10 +210,6 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
        
-      /*MenuOpciones ventanaMenu = new MenuOpciones();
-      ventanaMenu.setVisible(true);
-      this.dispose();
-      */
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed

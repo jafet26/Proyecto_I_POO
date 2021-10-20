@@ -17,17 +17,18 @@ import vista.RegistrarPlanDeEstudios;
  */
 public class ControladorPlanDeEstudio implements ActionListener {
   
-  public RegistrarPlanDeEstudios vistaRegistroPlanDeEstudio = new RegistrarPlanDeEstudios();
-  public PlanDeEstudios logicadenegocios;
-  public PlanDeEstudioDAO dao = new PlanDeEstudioDAO();
+  public RegistrarPlanDeEstudios vistaRegistroPlanDeEstudio;
+  public PlanDeEstudios planDeEstudio;
+  public PlanDeEstudioDAO dao;
   
   //constructor
   public ControladorPlanDeEstudio(RegistrarPlanDeEstudios pVistaRegistroPlanDeEstudio, 
-         PlanDeEstudioDAO pModelo) {
+         PlanDeEstudios pPlan) {
       
     vistaRegistroPlanDeEstudio = pVistaRegistroPlanDeEstudio;
-    dao = pModelo;
-        
+    planDeEstudio = pPlan;
+    dao = new PlanDeEstudioDAO();
+    
     this.vistaRegistroPlanDeEstudio.btnRegistrar.addActionListener(this);
     this.vistaRegistroPlanDeEstudio.btnVolver.addActionListener(this);
   }
@@ -43,6 +44,9 @@ public class ControladorPlanDeEstudio implements ActionListener {
         } catch (InstantiationException ex) {
             Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    if (e.getSource() == vistaRegistroPlanDeEstudio.btnVolver) {
+        this.vistaRegistroPlanDeEstudio.setVisible(false);
     }
 }
   

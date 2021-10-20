@@ -2,6 +2,12 @@
 package vista;
 
 import dao.CursoDAO;
+import dao.PlanDeEstudioDAO;
+import java.awt.event.ItemEvent;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import logicadenegocios.Escuela;
+import logicadenegocios.PlanDeEstudios;
 
 /**
  *
@@ -85,6 +91,9 @@ public class RegistrarCurso extends javax.swing.JFrame {
         cbxCodigoPlanDeEstudios = new javax.swing.JComboBox<>();
         lblNombre6 = new javax.swing.JLabel();
         txtBloqueSemestral = new javax.swing.JTextField();
+        txtCreditos = new javax.swing.JTextField();
+        txtHorasLectivas = new javax.swing.JTextField();
+        txtCodigoPlanDeEstudios = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +128,11 @@ public class RegistrarCurso extends javax.swing.JFrame {
         lblCodCurso.setText("Cod+");
 
         cbxEscuelas.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        cbxEscuelas.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxEscuelasItemStateChanged(evt);
+            }
+        });
         cbxEscuelas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxEscuelasActionPerformed(evt);
@@ -173,6 +187,12 @@ public class RegistrarCurso extends javax.swing.JFrame {
 
         txtBloqueSemestral.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
 
+        txtCreditos.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+
+        txtHorasLectivas.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+
+        txtCodigoPlanDeEstudios.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout panelRegistroCursoLayout = new javax.swing.GroupLayout(panelRegistroCurso);
         panelRegistroCurso.setLayout(panelRegistroCursoLayout);
         panelRegistroCursoLayout.setHorizontalGroup(
@@ -220,11 +240,15 @@ public class RegistrarCurso extends javax.swing.JFrame {
                                 .addComponent(btnLimpiar))
                             .addGroup(panelRegistroCursoLayout.createSequentialGroup()
                                 .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(cbxHorasLectivas, javax.swing.GroupLayout.Alignment.LEADING, 0, 68, Short.MAX_VALUE)
-                                        .addComponent(cbxCreditos, javax.swing.GroupLayout.Alignment.LEADING, 0, 68, Short.MAX_VALUE))
+                                    .addComponent(cbxHorasLectivas, 0, 81, Short.MAX_VALUE)
+                                    .addComponent(cbxCreditos, 0, 81, Short.MAX_VALUE)
                                     .addComponent(cbxEscuelas, 0, 81, Short.MAX_VALUE)
                                     .addComponent(txtCodigoCurso))
+                                .addGap(50, 50, 50)
+                                .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtHorasLectivas, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCodigoPlanDeEstudios, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(32, 32, 32))))
         );
@@ -251,15 +275,19 @@ public class RegistrarCurso extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxHorasLectivas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxHorasLectivas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHorasLectivas, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblNombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxCodigoPlanDeEstudios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cbxCodigoPlanDeEstudios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigoPlanDeEstudios, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(panelRegistroCursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,20 +325,24 @@ public class RegistrarCurso extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        // TODO add your handling code here:
+      //String opcion = cbxEscuelas.getSelectedItem().toString();
+      int opcion = Integer.parseInt(cbxCreditos.getSelectedItem().toString());
+      //int opcion = cbxHorasLectivas.getSelectedIndex();
+      JOptionPane.showMessageDialog(null,"opcion " + opcion);
+                                         
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-     
-      MenuOpciones ventanaMenu = new MenuOpciones();
-      ventanaMenu.setVisible(true);
-      this.dispose();
-      
+
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void cbxEscuelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEscuelasActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_cbxEscuelasActionPerformed
+
+    private void cbxEscuelasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxEscuelasItemStateChanged
+
+    }//GEN-LAST:event_cbxEscuelasItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -368,6 +400,9 @@ public class RegistrarCurso extends javax.swing.JFrame {
     private javax.swing.JPanel panelRegistroCurso;
     public javax.swing.JTextField txtBloqueSemestral;
     public javax.swing.JTextField txtCodigoCurso;
+    public javax.swing.JTextField txtCodigoPlanDeEstudios;
+    public javax.swing.JTextField txtCreditos;
+    public javax.swing.JTextField txtHorasLectivas;
     public javax.swing.JTextField txtNombreCurso;
     // End of variables declaration//GEN-END:variables
 }

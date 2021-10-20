@@ -27,11 +27,6 @@ public class RegistrarEscuela extends javax.swing.JFrame {
     
    
     } 
-    public void volverMenu(){
-      MenuOpciones ventana = new MenuOpciones();
-      ventana.setVisible(false);
-      this.dispose();
-  }
 
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT
@@ -176,9 +171,7 @@ public class RegistrarEscuela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-      /*MenuOpciones ventanaMenu = new MenuOpciones();
-      ventanaMenu.setVisible(true);
-      this.dispose();*/
+
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed

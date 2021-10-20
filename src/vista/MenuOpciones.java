@@ -20,6 +20,9 @@ public class MenuOpciones extends javax.swing.JFrame {
      */
     public MenuOpciones() {
         initComponents();
+        
+        //btnRegistrarEscuela.setText("Registrar Escuela o Area Academica");
+        
     }
 
     /**
@@ -168,51 +171,27 @@ public class MenuOpciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarEscuelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarEscuelaActionPerformed
-        
-      RegistrarEscuela ventanaRegistrarEscuela = new RegistrarEscuela();
-      ventanaRegistrarEscuela.setVisible(true);
-      this.dispose();
-      
+       
     }//GEN-LAST:event_btnRegistrarEscuelaActionPerformed
 
     private void btnRegistrarCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCursoActionPerformed
-    
-      RegistrarCurso ventanaRegistrarCurso = new RegistrarCurso();
-      ventanaRegistrarCurso.setVisible(true);
-      this.dispose();
-      
+ 
     }//GEN-LAST:event_btnRegistrarCursoActionPerformed
 
     private void btnRegistrarPlanEstudiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPlanEstudiosActionPerformed
-        
-      RegistrarPlanDeEstudios ventanaRegistrarPlanDeEstudios = new RegistrarPlanDeEstudios();
-      ventanaRegistrarPlanDeEstudios.setVisible(true);
-      this.dispose();
-      
+
     }//GEN-LAST:event_btnRegistrarPlanEstudiosActionPerformed
 
     private void btnAsignarCursosAPlanDeEstudiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAsignarCursosAPlanDeEstudiosActionPerformed
-     
-      AsignarCursosAPlanDeEstudios ventanaAsignarCursosPlan = new AsignarCursosAPlanDeEstudios();
-      ventanaAsignarCursosPlan.setVisible(true);
-      this.dispose();
-      
+
     }//GEN-LAST:event_btnAsignarCursosAPlanDeEstudiosActionPerformed
 
     private void btnModificacionInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificacionInformacionActionPerformed
-        
-      MenuModificaciones ventanaMenuModificaciones = new MenuModificaciones();
-      ventanaMenuModificaciones.setVisible(true);
-      this.dispose();
-      
+
     }//GEN-LAST:event_btnModificacionInformacionActionPerformed
 
     private void btnConsultasAdicionalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasAdicionalesActionPerformed
-        
-      MenuConsultasAdicionales ventanaMenuConsultas = new MenuConsultasAdicionales();
-      ventanaMenuConsultas.setVisible(true);
-      this.dispose();
-      
+
     }//GEN-LAST:event_btnConsultasAdicionalesActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed

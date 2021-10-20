@@ -30,16 +30,19 @@ import javax.swing.table.DefaultTableModel;
  * @author USUARIO
  */
 public class ControladorEscuela implements ActionListener {
-    
-  public RegistrarEscuela vistaRegistroEscuela = new RegistrarEscuela();
-  public Escuela logicadenegocios;
-  public EscuelaDAO dao = new EscuelaDAO();
+  public RegistrarEscuela vistaRegistroEscuela;
+  //public RegistrarEscuela vistaRegistroEscuela = new RegistrarEscuela();
+  public Escuela escuela;
+  //public EscuelaDAO dao = new EscuelaDAO();
+  public EscuelaDAO dao;
   
   //constructor
-  public ControladorEscuela(RegistrarEscuela pVistaRegistroEscuela, EscuelaDAO pModelo) {
+  //public ControladorEscuela(RegistrarEscuela pVistaRegistroEscuela, Escuela pEscuela, EscuelaDAO pModelo) {
+  public ControladorEscuela(RegistrarEscuela pVistaRegistroEscuela, Escuela pEscuela) {
     vistaRegistroEscuela = pVistaRegistroEscuela;
-    dao = pModelo;
-    //dao = new EscuelaDAO();
+    //dao = pModelo;
+    escuela = pEscuela;
+    dao = new EscuelaDAO();
         
     this.vistaRegistroEscuela.btnRegistrar.addActionListener(this);
     this.vistaRegistroEscuela.btnVolver.addActionListener(this);
@@ -56,6 +59,9 @@ public class ControladorEscuela implements ActionListener {
         } catch (InstantiationException ex) {
             Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    if (e.getSource() == vistaRegistroEscuela.btnVolver) {
+        this.vistaRegistroEscuela.setVisible(false);
     }
 }
   
@@ -78,7 +84,4 @@ public class ControladorEscuela implements ActionListener {
   }
   
 
-  public void volverMenu() {
-      vistaRegistroEscuela.volverMenu();
-  }
 }
