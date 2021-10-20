@@ -9,12 +9,12 @@ package vista;
  *
  * @author USUARIO
  */
-public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
+public class AsignarCursoRequisito extends javax.swing.JFrame {
 
     /**
      * Creates new form AsignarCursosAPlanDeEstudios
      */
-    public AsignarCursosAPlanDeEstudios() {
+    public AsignarCursoRequisito() {
         initComponents();
     }
 
@@ -31,13 +31,14 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
         lblNombreEscuela = new javax.swing.JLabel();
         cbxEscuelas = new javax.swing.JComboBox<>();
         lblCodigoPlan = new javax.swing.JLabel();
-        cbxPlanesDeEstudio = new javax.swing.JComboBox<>();
+        cbxCodigoCurso = new javax.swing.JComboBox<>();
         lblCodigoCurso = new javax.swing.JLabel();
-        cbxCodigosCursos = new javax.swing.JComboBox<>();
+        cbxCodigosCursosRequisito = new javax.swing.JComboBox<>();
         lblBloque = new javax.swing.JLabel();
-        cbxBloqueSemestre = new javax.swing.JComboBox<>();
-        btnRegistrar = new javax.swing.JButton();
+        cbxCursoCorrequisito = new javax.swing.JComboBox<>();
+        btnRegistrarRequisito = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        btnRegistrarCorrequisito = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,7 +46,7 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 28)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("Asignar un Curso a Plan de Estudios");
+        lblTitulo.setText("Asignar un Curso Requisito a otro Curso");
 
         lblNombreEscuela.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         lblNombreEscuela.setForeground(new java.awt.Color(255, 255, 255));
@@ -60,42 +61,42 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
 
         lblCodigoPlan.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         lblCodigoPlan.setForeground(new java.awt.Color(255, 255, 255));
-        lblCodigoPlan.setText("Seleccione Plan de estudios: ");
+        lblCodigoPlan.setText("Codigo del curso:");
 
-        cbxPlanesDeEstudio.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        cbxPlanesDeEstudio.addActionListener(new java.awt.event.ActionListener() {
+        cbxCodigoCurso.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        cbxCodigoCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxPlanesDeEstudioActionPerformed(evt);
+                cbxCodigoCursoActionPerformed(evt);
             }
         });
 
         lblCodigoCurso.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         lblCodigoCurso.setForeground(new java.awt.Color(255, 255, 255));
-        lblCodigoCurso.setText("Código del curso que formará parte del Plan:");
+        lblCodigoCurso.setText("Registrar Requisito del Curso");
 
-        cbxCodigosCursos.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        cbxCodigosCursos.addActionListener(new java.awt.event.ActionListener() {
+        cbxCodigosCursosRequisito.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        cbxCodigosCursosRequisito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxCodigosCursosActionPerformed(evt);
+                cbxCodigosCursosRequisitoActionPerformed(evt);
             }
         });
 
         lblBloque.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         lblBloque.setForeground(new java.awt.Color(255, 255, 255));
-        lblBloque.setText("Bloque Semestral:");
+        lblBloque.setText("Registrar Correquisito del Curso");
 
-        cbxBloqueSemestre.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        cbxBloqueSemestre.addActionListener(new java.awt.event.ActionListener() {
+        cbxCursoCorrequisito.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        cbxCursoCorrequisito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxBloqueSemestreActionPerformed(evt);
+                cbxCursoCorrequisitoActionPerformed(evt);
             }
         });
 
-        btnRegistrar.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        btnRegistrar.setText("Asignar curso al plan de estudios");
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrarRequisito.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnRegistrarRequisito.setText("Asignar Requisito del Curso");
+        btnRegistrarRequisito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
+                btnRegistrarRequisitoActionPerformed(evt);
             }
         });
 
@@ -107,47 +108,53 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
             }
         });
 
+        btnRegistrarCorrequisito.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnRegistrarCorrequisito.setText("Asignar Correquisito del Curso");
+        btnRegistrarCorrequisito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarCorrequisitoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRegistroCursoAPlanLayout = new javax.swing.GroupLayout(panelRegistroCursoAPlan);
         panelRegistroCursoAPlan.setLayout(panelRegistroCursoAPlanLayout);
         panelRegistroCursoAPlanLayout.setHorizontalGroup(
             panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addComponent(cbxCodigosCursosRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cbxCursoCorrequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(122, 122, 122))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroCursoAPlanLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTitulo)
                 .addGap(94, 94, 94))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroCursoAPlanLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblCodigoCurso)
+                    .addComponent(btnRegistrarRequisito))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegistrarCorrequisito)
+                    .addComponent(lblBloque))
+                .addGap(79, 79, 79))
             .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
                 .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
+                        .addGap(70, 70, 70)
                         .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblNombreEscuela)
                             .addComponent(lblCodigoPlan))
-                        .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
-                                .addGap(104, 104, 104)
-                                .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroCursoAPlanLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbxPlanesDeEstudio, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(213, 213, 213))))
-                    .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
-                            .addComponent(lblBloque)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cbxBloqueSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
-                            .addComponent(lblCodigoCurso)
-                            .addGap(18, 18, 18)
-                            .addComponent(cbxCodigosCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(16, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegistroCursoAPlanLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegistrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVolver)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(104, 104, 104)
+                        .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVolver)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         panelRegistroCursoAPlanLayout.setVerticalGroup(
             panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,18 +170,20 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxPlanesDeEstudio, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                    .addComponent(cbxCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxCodigosCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addComponent(lblBloque, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBloque, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbxBloqueSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                    .addComponent(cbxCodigosCursosRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxCursoCorrequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79)
+                .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrarCorrequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrarRequisito, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -195,21 +204,21 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxEscuelasActionPerformed
 
-    private void cbxPlanesDeEstudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPlanesDeEstudioActionPerformed
+    private void cbxCodigoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCodigoCursoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxPlanesDeEstudioActionPerformed
+    }//GEN-LAST:event_cbxCodigoCursoActionPerformed
 
-    private void cbxCodigosCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCodigosCursosActionPerformed
+    private void cbxCodigosCursosRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCodigosCursosRequisitoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxCodigosCursosActionPerformed
+    }//GEN-LAST:event_cbxCodigosCursosRequisitoActionPerformed
 
-    private void cbxBloqueSemestreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBloqueSemestreActionPerformed
+    private void cbxCursoCorrequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCursoCorrequisitoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxBloqueSemestreActionPerformed
+    }//GEN-LAST:event_cbxCursoCorrequisitoActionPerformed
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnRegistrarRequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarRequisitoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    }//GEN-LAST:event_btnRegistrarRequisitoActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
        
@@ -218,6 +227,10 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
       this.dispose();
       
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnRegistrarCorrequisitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCorrequisitoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarCorrequisitoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,31 +249,33 @@ public class AsignarCursosAPlanDeEstudios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AsignarCursosAPlanDeEstudios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarCursoRequisito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AsignarCursosAPlanDeEstudios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarCursoRequisito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AsignarCursosAPlanDeEstudios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarCursoRequisito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AsignarCursosAPlanDeEstudios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AsignarCursoRequisito.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AsignarCursosAPlanDeEstudios().setVisible(true);
+                new AsignarCursoRequisito().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnRegistrar;
+    public javax.swing.JButton btnRegistrarCorrequisito;
+    public javax.swing.JButton btnRegistrarRequisito;
     public javax.swing.JButton btnVolver;
-    private javax.swing.JComboBox<String> cbxBloqueSemestre;
-    private javax.swing.JComboBox<String> cbxCodigosCursos;
+    private javax.swing.JComboBox<String> cbxCodigoCurso;
+    private javax.swing.JComboBox<String> cbxCodigosCursosRequisito;
+    private javax.swing.JComboBox<String> cbxCursoCorrequisito;
     private javax.swing.JComboBox<String> cbxEscuelas;
-    private javax.swing.JComboBox<String> cbxPlanesDeEstudio;
     private javax.swing.JLabel lblBloque;
     private javax.swing.JLabel lblCodigoCurso;
     private javax.swing.JLabel lblCodigoPlan;

@@ -52,9 +52,9 @@
                               <Component id="btnRegistrarEscuela" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnRegistrarPlanEstudios" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="54" max="32767" attributes="0"/>
+                          <EmptySpace pref="30" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="btnAsignarCursosAPlanDeEstudios" max="32767" attributes="0"/>
+                              <Component id="btnAsignarCursoRequisito" max="32767" attributes="0"/>
                               <Component id="btnRegistrarCurso" max="32767" attributes="0"/>
                               <Component id="btnConsultasAdicionales" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -91,7 +91,7 @@
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnRegistrarPlanEstudios" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="btnAsignarCursosAPlanDeEstudios" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="btnAsignarCursoRequisito" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="30" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -157,15 +157,15 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAsignarCursosAPlanDeEstudios">
+        <Component class="javax.swing.JButton" name="btnAsignarCursoRequisito">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Microsoft Sans Serif" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Asignar Cursos a Plan de Estudios"/>
+            <Property name="text" type="java.lang.String" value="Asignar Cursos Requisitos a un Curso"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAsignarCursosAPlanDeEstudiosActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAsignarCursoRequisitoActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
