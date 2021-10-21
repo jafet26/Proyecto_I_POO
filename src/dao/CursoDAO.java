@@ -22,7 +22,7 @@ public class CursoDAO {
  
   public DefaultComboBoxModel llenarComboBoxPlanDeEstudio() {
     DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-    //modelo.addElement("Seleccione");
+    
       try {
           CallableStatement cmd = conexion.Conexion().prepareCall("{CALL [dbo].[Combo_Codigo_PlanEstudio]}");
           ResultSet resultado = cmd.executeQuery();
