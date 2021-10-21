@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import logicadenegocios.Curso;
 import logicadenegocios.Escuela;
 import logicadenegocios.PlanDeEstudios;
+import vista.MenuConsultasAdicionales;
 import vista.MenuOpciones;
 import vista.RegistrarCurso;
 import vista.RegistrarEscuela;
@@ -30,7 +31,7 @@ public class ControladorMenuOpciones implements ActionListener {
     this.vista.btnRegistrarEscuela.addActionListener(this);
     this.vista.btnRegistrarPlanEstudios.addActionListener(this);
     this.vista.btnRegistrarCurso.addActionListener(this);
-    
+    this.vista.btnConsultasAdicionales.addActionListener(this);
   }
   
   @Override
@@ -43,6 +44,12 @@ public class ControladorMenuOpciones implements ActionListener {
     }
     if (e.getSource() == vista.btnRegistrarCurso) {
         registrarCurso();
+    }
+    if (e.getSource() == vista.btnConsultasAdicionales) {
+        mostrarConsultasAdicionales();
+    }
+    if (e.getSource() == vista.btnVolver) {
+        this.vista.setVisible(false);
     }
   }
     
@@ -60,7 +67,7 @@ public class ControladorMenuOpciones implements ActionListener {
       RegistrarPlanDeEstudios registro = new RegistrarPlanDeEstudios();
       PlanDeEstudios plan = new PlanDeEstudios();
       PlanDeEstudioDAO dao = new PlanDeEstudioDAO();
-      ControladorPlanDeEstudio controlador = new ControladorPlanDeEstudio(registro, plan);
+      ControladorPlanDeEstudio controlador = new ControladorPlanDeEstudio(registro, dao);
       controlador.vistaRegistroPlanDeEstudio.setVisible(true);
       
   }
@@ -72,5 +79,11 @@ public class ControladorMenuOpciones implements ActionListener {
       ControladorCurso controlador = new ControladorCurso(registro, curso);
       controlador.vistaRegistroCurso.setVisible(true);
       
+  }
+  
+  public void mostrarConsultasAdicionales() {
+    MenuConsultasAdicionales menu = new MenuConsultasAdicionales();
+    ControladorMenuConsultasAdicionales controlador = new ControladorMenuConsultasAdicionales(menu);
+    controlador.vista.setVisible(true);
   }
 }

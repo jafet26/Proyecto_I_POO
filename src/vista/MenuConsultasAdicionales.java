@@ -29,7 +29,7 @@ public class MenuConsultasAdicionales extends javax.swing.JFrame {
         panelMenu = new javax.swing.JPanel();
         btnVolver = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
-        btnEliminarRequisitoCurso = new javax.swing.JButton();
+        btnConsultarPlanDeEstudio = new javax.swing.JButton();
         btnEliminarRequisitoCurso1 = new javax.swing.JButton();
         btnEliminarRequisitoCurso2 = new javax.swing.JButton();
         btnEliminarRequisitoCurso3 = new javax.swing.JButton();
@@ -50,11 +50,11 @@ public class MenuConsultasAdicionales extends javax.swing.JFrame {
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("Consultas adicionales");
 
-        btnEliminarRequisitoCurso.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        btnEliminarRequisitoCurso.setText("Consultar plan de estudios");
-        btnEliminarRequisitoCurso.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultarPlanDeEstudio.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnConsultarPlanDeEstudio.setText("Consultar plan de estudios");
+        btnConsultarPlanDeEstudio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarRequisitoCursoActionPerformed(evt);
+                btnConsultarPlanDeEstudioActionPerformed(evt);
             }
         });
 
@@ -99,7 +99,7 @@ public class MenuConsultasAdicionales extends javax.swing.JFrame {
                     .addGroup(panelMenuLayout.createSequentialGroup()
                         .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnEliminarRequisitoCurso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEliminarRequisitoCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnConsultarPlanDeEstudio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
                         .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelMenuLayout.createSequentialGroup()
@@ -118,7 +118,7 @@ public class MenuConsultasAdicionales extends javax.swing.JFrame {
                 .addComponent(lblTitulo)
                 .addGap(35, 35, 35)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEliminarRequisitoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsultarPlanDeEstudio, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminarRequisitoCurso2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -143,17 +143,11 @@ public class MenuConsultasAdicionales extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
 
-        MenuOpciones ventanaMenu = new MenuOpciones();
-        ventanaMenu.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
-    private void btnEliminarRequisitoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarRequisitoCursoActionPerformed
+    private void btnConsultarPlanDeEstudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarPlanDeEstudioActionPerformed
 
-        RegistrarEscuela ventanaRegistrarEscuela = new RegistrarEscuela();
-        ventanaRegistrarEscuela.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnEliminarRequisitoCursoActionPerformed
+    }//GEN-LAST:event_btnConsultarPlanDeEstudioActionPerformed
 
     private void btnEliminarRequisitoCurso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarRequisitoCurso1ActionPerformed
         // TODO add your handling code here:
@@ -203,7 +197,7 @@ public class MenuConsultasAdicionales extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnEliminarRequisitoCurso;
+    public javax.swing.JButton btnConsultarPlanDeEstudio;
     public javax.swing.JButton btnEliminarRequisitoCurso1;
     public javax.swing.JButton btnEliminarRequisitoCurso2;
     public javax.swing.JButton btnEliminarRequisitoCurso3;

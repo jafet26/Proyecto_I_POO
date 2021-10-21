@@ -5,15 +5,20 @@
  */
 package dao;
 
+import java.awt.List;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import logicadenegocios.Curso;
 import logicadenegocios.Escuela;
 import logicadenegocios.PlanDeEstudios;
 import proyecto_i_poo.Conexion;
@@ -93,6 +98,80 @@ public class PlanDeEstudioDAO {
       return resultado;
   }
   
+  /*public ResultSet SeleccionarCursos() {
+      
+      Statement st; 
+      ResultSet rs = null;
+      try {
+        Connection con = conexion.Conexion();
+        st = con.createStatement();
+        rs = st.executeQuery("Select CodigoCurso, NombreCurso, HorasLectivas, CantidadCreditos, "
+                + "NumeroBloqueSemestral from Curso");
+      
+      } catch (SQLException ex) {
+          Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+      } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+          Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      return rs;
+  } */
+  
+  public ResultSet SeleccionarCursosFiltro(String pCodigoEscuelaCurso, int pNumeroPlanEstudio) {
+    Statement ejecutor;
+    ResultSet rs = null;
+      
+    try {
+      Connection con = conexion.Conexion();
+      ejecutor = con.createStatement();
+      rs = ejecutor.executeQuery("execute dbo.consultarPlanDeEstudio '" + pCodigoEscuelaCurso +"', '" + pNumeroPlanEstudio + "'");
+    } catch(SQLException ex){
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+      
+    return rs;
+  }
+  
+  public ResultSet indicarFechaVigenciaPlan(String pCodigoEscuelaCurso, int pNumeroPlanEstudio) {
+    Statement ejecutor;
+    ResultSet rs = null;
+    
+    try {
+      Connection con = conexion.Conexion();
+      ejecutor = con.createStatement();
+      rs = ejecutor.executeQuery("execute dbo.adquirirFechaVigencia '" + pCodigoEscuelaCurso +"', '" + pNumeroPlanEstudio + "'");
+    } catch(SQLException ex){
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return rs; 
+  }
+  /*public ArrayList<Curso> listarCursos() {
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    ArrayList<Curso> datos = new ArrayList<>();
+    String sql = "select c.CodigoCurso, c.NombreCurso, c.HorasLectivas, c.CantidadCreditos, "
+            + "c.NumeroBloqueSemestral from Curso c ";
+    try {
+      Connection con = conexion.Conexion();
+      ps = con.prepareStatement(sql);
+      rs = ps.executeQuery();
+      
+      while (rs.next()) {
+        Curso curso = new Curso();
+        curso.setCodigoCurso(rs.getString(1));
+        curso.setNmbreCurso(rs.getString(2));
+        curso.setHorasLectivas(rs.getInt(3));
+        curso.setCantidadCreditos(rs.getInt(4));
+        curso.setNumeroBloqueSemestre(rs.getInt(5));
+        datos.add(curso);
+      }
+    } catch (Exception e) {
+      }
+    return datos;
+  }*/
   /*public Vector<PlanDeEstudios> mostrarPlanesEstudio(String pCodigoEscuela) {
     PreparedStatement ps = null;
     ResultSet rs = null;

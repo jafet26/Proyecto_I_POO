@@ -10,7 +10,7 @@ public class Curso {
   private String nombreCurso;
   private int horasLectivas;
   private int cantidadCreditos;
-  
+  private int numeroBloqueSemestre;
   /**
    * Metodo Constructor Vacio
    */
@@ -59,6 +59,10 @@ public class Curso {
     
   }
   
+  public int getNumeroBloqueSemestre() {
+    return numeroBloqueSemestre;
+  }
+  
   /**
    * Metodos SETTERS
    */
@@ -84,6 +88,10 @@ public class Curso {
       
     pHorasLectivas = horasLectivas;
     
+  }
+  
+  public void setNumeroBloqueSemestre(int pNumeroBloqueSemestre) {
+      pNumeroBloqueSemestre =numeroBloqueSemestre;
   }
   
   /**
