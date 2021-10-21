@@ -17,6 +17,7 @@ import logicadenegocios.Curso;
 import logicadenegocios.PlanDeEstudios;
 import proyecto_i_poo.Conexion;
 import vista.ConsultarPlanDeEstudio;
+import vista.ConsultarPlanDeEstudioCursoParticular;
 import vista.RegistrarPlanDeEstudios;
 
 /**
@@ -27,6 +28,7 @@ public class ControladorPlanDeEstudio implements ActionListener {
   
   public RegistrarPlanDeEstudios vistaRegistroPlanDeEstudio = new RegistrarPlanDeEstudios();
   public ConsultarPlanDeEstudio vistaConsultarPlanDeEstudio = new ConsultarPlanDeEstudio();
+  public ConsultarPlanDeEstudioCursoParticular vistaConsultarPlanDeEstudioCursoParticular = new ConsultarPlanDeEstudioCursoParticular();
   public PlanDeEstudios logicadenegocios;
   public PlanDeEstudioDAO dao = new PlanDeEstudioDAO();
   public Curso curso;
@@ -49,6 +51,16 @@ public class ControladorPlanDeEstudio implements ActionListener {
     vistaConsultarPlanDeEstudio = pVistaConsultarPlanDeEstudio;
     dao = pModelo;
     this.vistaConsultarPlanDeEstudio.btnGenerarPDF.addActionListener(this);
+    this.vistaConsultarPlanDeEstudio.btnBuscar.addActionListener(this);
+    this.vistaConsultarPlanDeEstudio.btnVolver.addActionListener(this);
+  }
+  
+  public ControladorPlanDeEstudio(ConsultarPlanDeEstudioCursoParticular pVistaConsultarPlanDeEstudioCursoParticular,
+          PlanDeEstudioDAO pModelo) {
+    vistaConsultarPlanDeEstudioCursoParticular = pVistaConsultarPlanDeEstudioCursoParticular;
+    dao = pModelo;
+    this.vistaConsultarPlanDeEstudioCursoParticular.btnBuscar.addActionListener(this);
+    this.vistaConsultarPlanDeEstudioCursoParticular.btnVolver.addActionListener(this);
   }
   
   public void actionPerformed(ActionEvent e) {
@@ -60,11 +72,20 @@ public class ControladorPlanDeEstudio implements ActionListener {
         }
     
     }
-    if (e.getSource() == vistaConsultarPlanDeEstudio.btnGenerarPDF) {
-        listar();
+    if (e.getSource() == vistaConsultarPlanDeEstudio.btnBuscar) {
+        consultarPlanDeEstudio();
+    }
+    if (e.getSource() == vistaConsultarPlanDeEstudioCursoParticular.btnBuscar) {
+        consultarPlanDeEstudioCursoParticular();
     }
     if(e.getSource() == vistaRegistroPlanDeEstudio.btnVolver) {
         this.vistaRegistroPlanDeEstudio.setVisible(false);
+    }
+    if(e.getSource() == vistaConsultarPlanDeEstudio.btnVolver) {
+        this.vistaConsultarPlanDeEstudio.setVisible(false);
+    }
+    if(e.getSource() == vistaConsultarPlanDeEstudioCursoParticular.btnVolver) {
+        this.vistaConsultarPlanDeEstudioCursoParticular.setVisible(false);
     }
 }
   
@@ -89,8 +110,7 @@ public class ControladorPlanDeEstudio implements ActionListener {
   }
   
   
-  public void listar() {
-    
+  public void consultarPlanDeEstudio() {
     String codigoEscuela = vistaConsultarPlanDeEstudio.cbxEscuelas.getSelectedItem().toString();
     int numeroPlanEstudio = Integer.parseInt(vistaConsultarPlanDeEstudio.cbxCodigoPlanDeEstudios.getSelectedItem().toString());
     ResultSet rs2 = dao.indicarFechaVigenciaPlan(codigoEscuela, numeroPlanEstudio);
@@ -118,6 +138,26 @@ public class ControladorPlanDeEstudio implements ActionListener {
         JOptionPane.showMessageDialog(null,ex);
     }
     
+  }
+  
+  public void consultarPlanDeEstudioCursoParticular() {
+    String curso = vistaConsultarPlanDeEstudioCursoParticular.cbxCursos.getSelectedItem().toString();
+    rs = dao.SeleccionarPlanesDeEstudioCursoParticular(curso);
+    DefaultTableModel dfm = new DefaultTableModel();
+    tabla = vistaConsultarPlanDeEstudioCursoParticular.tablaInformeCursosPlan;
+    tabla.setModel(dfm);
+    dfm.setColumnIdentifiers(new Object[]{"Curso", "Plan de Estudio", "Fecha Entrada Vigencia", 
+        "Cantidad de Semestres", "Codigo de la Escuela", "Nombre"});
+    
+    try {
+      while (rs.next()) {
+        dfm.addRow(new Object[] {rs.getString("NombreCurso"), rs.getInt("NumeroPlanEstudio"),
+        rs.getString("FechaEntradaVigencia"), rs.getInt("CantidadSemestres"), 
+        rs.getString("CodigoEscuelaPlanEstudio"), rs.getString("NombreEscuela")});
+      }    
+    } catch (SQLException ex) {
+       JOptionPane.showMessageDialog(null,ex); 
+    }
   }
   public void volverMenu() {
       vistaRegistroPlanDeEstudio.volverMenu();

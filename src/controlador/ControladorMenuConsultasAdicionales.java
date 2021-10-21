@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import logicadenegocios.Escuela;
 import logicadenegocios.PlanDeEstudios;
 import vista.ConsultarPlanDeEstudio;
+import vista.ConsultarPlanDeEstudioCursoParticular;
 import vista.MenuConsultasAdicionales;
 import vista.RegistrarPlanDeEstudios;
 
@@ -22,6 +23,7 @@ public class ControladorMenuConsultasAdicionales implements ActionListener {
     vista = pVista;
 
     this.vista.btnConsultarPlanDeEstudio.addActionListener(this);
+    this.vista.btnConsultarPlanDeEstudioCursoParticular.addActionListener(this);
     this.vista.btnVolver.addActionListener(this);
   }
     
@@ -30,9 +32,9 @@ public class ControladorMenuConsultasAdicionales implements ActionListener {
     if (e.getSource() == vista.btnConsultarPlanDeEstudio) {
         consultarPlanDeEstudio();
     }
-    //if (e.getSource() == vista.btnRegistrarPlanEstudios) {
-       // registrarPlanEstudios();
-    //}
+    if (e.getSource() == vista.btnConsultarPlanDeEstudioCursoParticular) {
+       consultarPlanDeEstudioCursoParticular();
+    }
     if (e.getSource() == vista.btnVolver) {
         this.vista.setVisible(false);
     }
@@ -45,5 +47,12 @@ public class ControladorMenuConsultasAdicionales implements ActionListener {
       ControladorPlanDeEstudio controlador = new ControladorPlanDeEstudio(registro,dao);
       controlador.vistaConsultarPlanDeEstudio.setVisible(true);
       
+  }
+  
+  public void consultarPlanDeEstudioCursoParticular() {
+      ConsultarPlanDeEstudioCursoParticular registro = new ConsultarPlanDeEstudioCursoParticular();
+      PlanDeEstudioDAO dao = new PlanDeEstudioDAO();
+      ControladorPlanDeEstudio controlador = new ControladorPlanDeEstudio(registro,dao);
+      controlador.vistaConsultarPlanDeEstudioCursoParticular.setVisible(true);
   }
 }

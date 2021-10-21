@@ -19,13 +19,6 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
   
   public void llenarCbxEscuelas() {
     PlanDeEstudioDAO dao = new PlanDeEstudioDAO();
-    /*ArrayList<Escuela> listaEscuelas = dao.getEscuelas();
-      
-    cbxEscuelas.removeAllItems();
-      
-    for (Escuela buscarEscuelas: listaEscuelas) {
-      cbxEscuelas.addItem(new Escuela(buscarEscuelas.getCodigo(), buscarEscuelas.getNombreEscuela()));
-    }*/
     cbxEscuelas.setModel(dao.llenarComboBox());
   }
 

@@ -36,36 +36,27 @@ public class PlanDeEstudioDAO {
   public PlanDeEstudioDAO() {
     conexion = new Conexion();
   }
-    
-  //metodo para llenar el combobox de escuelas
-  /*public ArrayList<Escuela> getEscuelas() {
-    
-    Statement sentencia;
-    ResultSet resultado;
-    
-    
-    try {
-      Connection con = conexion.Conexion();
-      sentencia = con.createStatement();
-      resultado = sentencia.executeQuery("SELECT * FROM Escuela");
-      
-      while (resultado.next()) {
-        Escuela escuela = new Escuela();
-        escuela.setCodigo(resultado.getString("CodigoEscuela"));
-        escuela.setNombreEscuela(resultado.getString("NombreEscuela"));
-        listaEscuelas.add(escuela);
-      }
-    } catch (Exception ex) {
-        
-    }
-    return listaEscuelas;
-  }*/
-  
+
   public DefaultComboBoxModel llenarComboBox() {
     DefaultComboBoxModel modelo = new DefaultComboBoxModel();
     //modelo.addElement("Seleccione");
       try {
           CallableStatement cmd = conexion.Conexion().prepareCall("{CALL [dbo].[Combo_Escuelas]}");
+          ResultSet resultado = cmd.executeQuery();
+          
+          while (resultado.next()) {
+            modelo.addElement(resultado.getString(1));
+          }
+      } catch (Exception e) {
+      }
+      return modelo;
+  }
+  
+  public DefaultComboBoxModel llenarComboBoxCursos() {
+    DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+    //modelo.addElement("Seleccione");
+      try {
+          CallableStatement cmd = conexion.Conexion().prepareCall("{CALL [dbo].[comboCursos]}");
           ResultSet resultado = cmd.executeQuery();
           
           while (resultado.next()) {
@@ -97,25 +88,7 @@ public class PlanDeEstudioDAO {
       }
       return resultado;
   }
-  
-  /*public ResultSet SeleccionarCursos() {
-      
-      Statement st; 
-      ResultSet rs = null;
-      try {
-        Connection con = conexion.Conexion();
-        st = con.createStatement();
-        rs = st.executeQuery("Select CodigoCurso, NombreCurso, HorasLectivas, CantidadCreditos, "
-                + "NumeroBloqueSemestral from Curso");
-      
-      } catch (SQLException ex) {
-          Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-      } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
-          Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
-      }
-      return rs;
-  } */
-  
+   
   public ResultSet SeleccionarCursosFiltro(String pCodigoEscuelaCurso, int pNumeroPlanEstudio) {
     Statement ejecutor;
     ResultSet rs = null;
@@ -132,7 +105,7 @@ public class PlanDeEstudioDAO {
       
     return rs;
   }
-  
+    
   public ResultSet indicarFechaVigenciaPlan(String pCodigoEscuelaCurso, int pNumeroPlanEstudio) {
     Statement ejecutor;
     ResultSet rs = null;
@@ -148,57 +121,22 @@ public class PlanDeEstudioDAO {
     }
     return rs; 
   }
-  /*public ArrayList<Curso> listarCursos() {
-    PreparedStatement ps = null;
+  
+  public ResultSet SeleccionarPlanesDeEstudioCursoParticular(String pCurso) {
+    Statement ejecutor;
     ResultSet rs = null;
-    ArrayList<Curso> datos = new ArrayList<>();
-    String sql = "select c.CodigoCurso, c.NombreCurso, c.HorasLectivas, c.CantidadCreditos, "
-            + "c.NumeroBloqueSemestral from Curso c ";
+    
     try {
       Connection con = conexion.Conexion();
-      ps = con.prepareStatement(sql);
-      rs = ps.executeQuery();
+      ejecutor = con.createStatement();
+      rs = ejecutor.executeQuery("execute dbo.consultarPlanDeEstudioCursoParticular '" + pCurso +"'");
+    } catch (SQLException ex) {
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }  
       
-      while (rs.next()) {
-        Curso curso = new Curso();
-        curso.setCodigoCurso(rs.getString(1));
-        curso.setNmbreCurso(rs.getString(2));
-        curso.setHorasLectivas(rs.getInt(3));
-        curso.setCantidadCreditos(rs.getInt(4));
-        curso.setNumeroBloqueSemestre(rs.getInt(5));
-        datos.add(curso);
-      }
-    } catch (Exception e) {
-      }
-    return datos;
-  }*/
-  /*public Vector<PlanDeEstudios> mostrarPlanesEstudio(String pCodigoEscuela) {
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    Vector<PlanDeEstudios> datos = new Vector<PlanDeEstudios>();
-    PlanDeEstudios dat = null;
-    
-      try {
-          Connection conect = conexion.Conexion();
-          String sql = "Select NumeroPlanEstudio from PlanDeEstudio "
-                  + "where CodigoEscuelaPlanEstudio = " + pCodigoEscuela;
-          ps = conect.prepareStatement(sql);
-          rs = ps.executeQuery();
-          
-          //dat = new PlanDeEstudios();
-          
-          while (rs.next()) {
-              dat = new PlanDeEstudios();
-              dat.setNumeroPlan(rs.getInt("NumeroPlanEstudio"));
-              datos.add(dat);
-          }
-          rs.close();
-      } catch (Exception e) {
-          System.err.println(e.toString());
-      }
-      return datos;
-  }*/
-    
-    
-    
+    return rs;
+  } 
+  
 }

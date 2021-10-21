@@ -65,12 +65,12 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
         cbxEscuelas = new javax.swing.JComboBox<>();
         lblCodigoPlan = new javax.swing.JLabel();
         cbxCodigoPlanDeEstudios = new javax.swing.JComboBox<>();
-        txtCodigoPlan = new javax.swing.JTextField();
         lblVigenciaPlan = new javax.swing.JLabel();
         txtFechaVigencia = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaInformeCursosPlan = new javax.swing.JTable();
         btnGenerarPDF = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,8 +105,6 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
 
         cbxCodigoPlanDeEstudios.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
 
-        txtCodigoPlan.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
-
         lblVigenciaPlan.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         lblVigenciaPlan.setForeground(new java.awt.Color(255, 255, 255));
         lblVigenciaPlan.setText("Vigencia del plan de estudios: ");
@@ -131,6 +129,14 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
             }
         });
 
+        btnBuscar.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        btnBuscar.setText("Realizar Busqueda");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelConsultaLayout = new javax.swing.GroupLayout(panelConsulta);
         panelConsulta.setLayout(panelConsultaLayout);
         panelConsultaLayout.setHorizontalGroup(
@@ -140,19 +146,14 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
                     .addGroup(panelConsultaLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelConsultaLayout.createSequentialGroup()
-                                .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNombreEscuela)
-                                    .addComponent(lblVigenciaPlan)
-                                    .addComponent(lblCodigoPlan))
-                                .addGap(38, 38, 38)
-                                .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cbxCodigoPlanDeEstudios, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaVigencia, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(panelConsultaLayout.createSequentialGroup()
-                                .addGap(384, 384, 384)
-                                .addComponent(txtCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblNombreEscuela)
+                            .addComponent(lblVigenciaPlan)
+                            .addComponent(lblCodigoPlan))
+                        .addGap(38, 38, 38)
+                        .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbxCodigoPlanDeEstudios, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFechaVigencia, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelConsultaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnGenerarPDF)))
@@ -168,6 +169,10 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
                     .addGroup(panelConsultaLayout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConsultaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnBuscar)
+                .addGap(25, 25, 25))
         );
         panelConsultaLayout.setVerticalGroup(
             panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,14 +188,14 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbxCodigoPlanDeEstudios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVigenciaPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFechaVigencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                .addGap(12, 12, 12)
+                .addComponent(btnBuscar)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(btnGenerarPDF)
@@ -230,6 +235,10 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGenerarPDFActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -266,6 +275,7 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnGenerarPDF;
     public javax.swing.JButton btnVolver;
     public javax.swing.JComboBox<String> cbxCodigoPlanDeEstudios;
@@ -277,7 +287,6 @@ public class ConsultarPlanDeEstudio extends javax.swing.JFrame {
     private javax.swing.JLabel lblVigenciaPlan;
     private javax.swing.JPanel panelConsulta;
     public javax.swing.JTable tablaInformeCursosPlan;
-    public javax.swing.JTextField txtCodigoPlan;
     public javax.swing.JTextField txtFechaVigencia;
     // End of variables declaration//GEN-END:variables
 }
