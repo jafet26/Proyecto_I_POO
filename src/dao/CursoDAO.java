@@ -9,7 +9,7 @@ import proyecto_i_poo.Conexion;
 
 /**
  *
- * @author USUARIO
+ * @author Vaglio
  */
 public class CursoDAO {
   Conexion conexion;
