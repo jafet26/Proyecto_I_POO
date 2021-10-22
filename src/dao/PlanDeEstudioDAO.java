@@ -106,14 +106,30 @@ public class PlanDeEstudioDAO {
     return rs;
   }
     
-  public ResultSet indicarFechaVigenciaPlan(String pCodigoEscuelaCurso, int pNumeroPlanEstudio) {
+  public ResultSet indicarFechaVigenciaPlan(int pNumeroPlanEstudio) {
     Statement ejecutor;
     ResultSet rs = null;
     
     try {
       Connection con = conexion.Conexion();
       ejecutor = con.createStatement();
-      rs = ejecutor.executeQuery("execute dbo.adquirirFechaVigencia '" + pCodigoEscuelaCurso +"', '" + pNumeroPlanEstudio + "'");
+      rs = ejecutor.executeQuery("execute dbo.adquirirFechaVigencia '" + pNumeroPlanEstudio + "'");
+    } catch(SQLException ex){
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return rs; 
+  }
+  
+  public ResultSet indicarNombreEscuela(int pNumeroPlanEstudio) {
+    Statement ejecutor;
+    ResultSet rs = null;
+    
+    try {
+      Connection con = conexion.Conexion();
+      ejecutor = con.createStatement();
+      rs = ejecutor.executeQuery("execute dbo.adquirirNombreEscuela '" + pNumeroPlanEstudio + "'");
     } catch(SQLException ex){
         Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {

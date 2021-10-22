@@ -111,14 +111,23 @@ public class ControladorPlanDeEstudio implements ActionListener {
   
   
   public void consultarPlanDeEstudio() {
-    String codigoEscuela = vistaConsultarPlanDeEstudio.cbxEscuelas.getSelectedItem().toString();
+    
     int numeroPlanEstudio = Integer.parseInt(vistaConsultarPlanDeEstudio.cbxCodigoPlanDeEstudios.getSelectedItem().toString());
-    ResultSet rs2 = dao.indicarFechaVigenciaPlan(codigoEscuela, numeroPlanEstudio);
+    ResultSet rs2 = dao.indicarFechaVigenciaPlan(numeroPlanEstudio);
+    ResultSet rs3 = dao.indicarNombreEscuela(numeroPlanEstudio);
       try {
           if (rs2.next()){
             String fecha = rs2.getString("FechaEntradaVigencia");
             vistaConsultarPlanDeEstudio.txtFechaVigencia.setText(fecha);
           }
+      } catch (SQLException ex) {
+          Logger.getLogger(ControladorPlanDeEstudio.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      try {
+        if(rs3.next()) {
+            String nombreEscuela = rs3.getString("NombreEscuela");
+            vistaConsultarPlanDeEstudio.txtEscuelaPlan.setText(nombreEscuela);
+        }
       } catch (SQLException ex) {
           Logger.getLogger(ControladorPlanDeEstudio.class.getName()).log(Level.SEVERE, null, ex);
       }
