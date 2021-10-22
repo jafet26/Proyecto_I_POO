@@ -123,7 +123,7 @@ public class ControladorPlanDeEstudio implements ActionListener {
           Logger.getLogger(ControladorPlanDeEstudio.class.getName()).log(Level.SEVERE, null, ex);
       }
     
-    rs = dao.SeleccionarCursosFiltro(codigoEscuela, numeroPlanEstudio);
+    rs = dao.SeleccionarCursosFiltro(numeroPlanEstudio);
     DefaultTableModel dfm = new DefaultTableModel();
     tabla = vistaConsultarPlanDeEstudio.tablaInformeCursosPlan;
     tabla.setModel(dfm);

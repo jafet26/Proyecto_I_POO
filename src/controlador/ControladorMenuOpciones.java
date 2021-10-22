@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import logicadenegocios.Curso;
 import logicadenegocios.Escuela;
 import logicadenegocios.PlanDeEstudios;
+import vista.AsignarCursoRequisito;
 import vista.MenuConsultasAdicionales;
 import vista.MenuOpciones;
 import vista.RegistrarCurso;
@@ -31,6 +32,7 @@ public class ControladorMenuOpciones implements ActionListener {
     this.vista.btnRegistrarEscuela.addActionListener(this);
     this.vista.btnRegistrarPlanEstudios.addActionListener(this);
     this.vista.btnRegistrarCurso.addActionListener(this);
+    this.vista.btnAsignarCursoRequisito.addActionListener(this);
     this.vista.btnConsultasAdicionales.addActionListener(this);
   }
   
@@ -44,6 +46,9 @@ public class ControladorMenuOpciones implements ActionListener {
     }
     if (e.getSource() == vista.btnRegistrarCurso) {
         registrarCurso();
+    }
+    if (e.getSource() == vista.btnAsignarCursoRequisito) {
+        registrarRequisitoAUnCurso();
     }
     if (e.getSource() == vista.btnConsultasAdicionales) {
         mostrarConsultasAdicionales();
@@ -79,6 +84,15 @@ public class ControladorMenuOpciones implements ActionListener {
       ControladorCurso controlador = new ControladorCurso(registro, curso);
       controlador.vistaRegistroCurso.setVisible(true);
       
+  }
+  
+  public void registrarRequisitoAUnCurso() {
+      AsignarCursoRequisito asignacion = new AsignarCursoRequisito();
+      Curso curso = new Curso();
+      CursoDAO dao = new CursoDAO();
+      ControladorCurso controlador = new ControladorCurso(asignacion, curso);
+      //controlador.vistaRegistroCurso.setVisible(false);
+      controlador.vistaAsignarCursoRequisito.setVisible(true);
   }
   
   public void mostrarConsultasAdicionales() {

@@ -196,14 +196,14 @@ public class MenuOpciones extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         
-      Inicio ventanaInicio = null;
+      /*Inicio ventanaInicio = null;
         try {
             ventanaInicio = new Inicio();
         } catch (SQLException ex) {
             Logger.getLogger(MenuOpciones.class.getName()).log(Level.SEVERE, null, ex);
         }
       ventanaInicio.setVisible(true);
-      this.dispose();
+      this.dispose(); */
       
     }//GEN-LAST:event_btnVolverActionPerformed
 

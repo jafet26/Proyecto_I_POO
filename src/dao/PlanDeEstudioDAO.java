@@ -89,14 +89,14 @@ public class PlanDeEstudioDAO {
       return resultado;
   }
    
-  public ResultSet SeleccionarCursosFiltro(String pCodigoEscuelaCurso, int pNumeroPlanEstudio) {
+  public ResultSet SeleccionarCursosFiltro(int pNumeroPlanEstudio) {
     Statement ejecutor;
     ResultSet rs = null;
       
     try {
       Connection con = conexion.Conexion();
       ejecutor = con.createStatement();
-      rs = ejecutor.executeQuery("execute dbo.consultarPlanDeEstudio '" + pCodigoEscuelaCurso +"', '" + pNumeroPlanEstudio + "'");
+      rs = ejecutor.executeQuery("execute dbo.consultarPlanDeEstudio '" + pNumeroPlanEstudio + "'");
     } catch(SQLException ex){
         Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
