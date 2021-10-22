@@ -129,10 +129,6 @@ public class MenuModificaciones extends javax.swing.JFrame {
 
     private void btnEliminarRequisitoCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarRequisitoCursoActionPerformed
 
-        RegistrarEscuela ventanaRegistrarEscuela = new RegistrarEscuela();
-        ventanaRegistrarEscuela.setVisible(true);
-        this.dispose();
-
     }//GEN-LAST:event_btnEliminarRequisitoCursoActionPerformed
 
     private void btnEliminarCursoDePlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarCursoDePlanActionPerformed
@@ -144,10 +140,6 @@ public class MenuModificaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarCursoActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-
-        MenuOpciones ventanaMenu = new MenuOpciones();
-        ventanaMenu.setVisible(true);
-        this.dispose();
 
     }//GEN-LAST:event_btnVolverActionPerformed
 

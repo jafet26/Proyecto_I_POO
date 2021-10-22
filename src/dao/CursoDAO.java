@@ -4,6 +4,10 @@ package dao;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import proyecto_i_poo.Conexion;
 
@@ -207,4 +211,40 @@ public class CursoDAO {
       return resultado;
   }
   
+  public ResultSet BuscarCurso(String pCurso) {
+    Statement ejecutor;
+    ResultSet rs = null;
+    
+    try {
+      Connection con = conexion.Conexion();
+      ejecutor = con.createStatement();
+      rs = ejecutor.executeQuery("execute dbo.adquirirCursos '" + pCurso +"'");
+    } catch (SQLException ex) {
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }  
+      
+    return rs;
+  } 
+  
+  public boolean eliminarCursoRequisito(String pCurso) throws ClassNotFoundException {
+    boolean res = false;
+    try {
+      Connection con = conexion.Conexion();
+      String query = "dbo.eliminarCursoRequisito @CodigoCurso_Requisito = ?";
+      CallableStatement consulta = con.prepareCall(query);
+      consulta.setString(1, pCurso);
+      consulta.execute();
+      res = true;
+          
+    } catch (SQLException e) {
+        System.out.println(e);
+    } catch (InstantiationException | IllegalAccessException ex) {
+          Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+    return res;
+  }
+
 }

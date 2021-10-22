@@ -13,6 +13,7 @@ import logicadenegocios.Escuela;
 import logicadenegocios.PlanDeEstudios;
 import vista.AsignarCursoRequisito;
 import vista.MenuConsultasAdicionales;
+import vista.MenuModificaciones;
 import vista.MenuOpciones;
 import vista.RegistrarCurso;
 import vista.RegistrarEscuela;
@@ -34,6 +35,7 @@ public class ControladorMenuOpciones implements ActionListener {
     this.vista.btnRegistrarCurso.addActionListener(this);
     this.vista.btnAsignarCursoRequisito.addActionListener(this);
     this.vista.btnConsultasAdicionales.addActionListener(this);
+    this.vista.btnModificacionInformacion.addActionListener(this);
   }
   
   @Override
@@ -52,6 +54,9 @@ public class ControladorMenuOpciones implements ActionListener {
     }
     if (e.getSource() == vista.btnConsultasAdicionales) {
         mostrarConsultasAdicionales();
+    }
+    if(e.getSource() == vista.btnModificacionInformacion) {
+        mostrarConsultasModificacionInformacion();
     }
     if (e.getSource() == vista.btnVolver) {
         this.vista.setVisible(false);
@@ -98,6 +103,12 @@ public class ControladorMenuOpciones implements ActionListener {
   public void mostrarConsultasAdicionales() {
     MenuConsultasAdicionales menu = new MenuConsultasAdicionales();
     ControladorMenuConsultasAdicionales controlador = new ControladorMenuConsultasAdicionales(menu);
+    controlador.vista.setVisible(true);
+  }
+  
+  public void mostrarConsultasModificacionInformacion() {
+    MenuModificaciones menu = new MenuModificaciones();
+    ControladorMenuModificaciones controlador = new ControladorMenuModificaciones(menu);
     controlador.vista.setVisible(true);
   }
 }
