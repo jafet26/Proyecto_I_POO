@@ -41,7 +41,7 @@ public class MenuOpciones extends javax.swing.JFrame {
         btnAsignarCursoRequisito = new javax.swing.JButton();
         btnModificacionInformacion = new javax.swing.JButton();
         btnConsultasAdicionales = new javax.swing.JButton();
-        btnVolver = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,11 +99,11 @@ public class MenuOpciones extends javax.swing.JFrame {
             }
         });
 
-        btnVolver.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
-        btnVolver.setText("Volver");
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 10)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -126,7 +126,7 @@ public class MenuOpciones extends javax.swing.JFrame {
                             .addComponent(btnConsultasAdicionales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(48, 48, 48))
                     .addGroup(panelMenuLayout.createSequentialGroup()
-                        .addComponent(btnVolver)
+                        .addComponent(btnSalir)
                         .addGap(87, 87, 87)
                         .addComponent(lblTitulo)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -137,7 +137,7 @@ public class MenuOpciones extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelMenuLayout.createSequentialGroup()
-                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(69, 69, 69))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
                         .addComponent(lblTitulo)
@@ -194,18 +194,9 @@ public class MenuOpciones extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnConsultasAdicionalesActionPerformed
 
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        
-      /*Inicio ventanaInicio = null;
-        try {
-            ventanaInicio = new Inicio();
-        } catch (SQLException ex) {
-            Logger.getLogger(MenuOpciones.class.getName()).log(Level.SEVERE, null, ex);
-        }
-      ventanaInicio.setVisible(true);
-      this.dispose(); */
-      
-    }//GEN-LAST:event_btnVolverActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,7 +240,7 @@ public class MenuOpciones extends javax.swing.JFrame {
     public javax.swing.JButton btnRegistrarCurso;
     public javax.swing.JButton btnRegistrarEscuela;
     public javax.swing.JButton btnRegistrarPlanEstudios;
-    public javax.swing.JButton btnVolver;
+    public javax.swing.JButton btnSalir;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelMenu;
     // End of variables declaration//GEN-END:variables

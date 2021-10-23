@@ -84,6 +84,21 @@ public class CursoDAO {
       return modelo;
   }
   
+  public DefaultComboBoxModel llenarComboBoxCodigoCursoBackup() {
+    DefaultComboBoxModel modelo = new DefaultComboBoxModel();
+ 
+      try {
+          CallableStatement cmd = conexion.Conexion().prepareCall("{CALL [dbo].[comboCursosBackup]}");
+          ResultSet resultado = cmd.executeQuery();
+
+          while (resultado.next()) {
+            modelo.addElement(resultado.getString(1));
+          }
+      } catch (Exception e) {
+      }
+      return modelo;
+  }
+  
   public DefaultComboBoxModel llenarComboBoxEscuelaTablaRequisito() {
 
     DefaultComboBoxModel modelo = new DefaultComboBoxModel();
@@ -246,5 +261,76 @@ public class CursoDAO {
     
     return res;
   }
+  
+  public ResultSet BuscarPlanEstudioCurso(String pCurso) {
+    Statement ejecutor;
+    ResultSet rs = null;
+    
+    try {
+      Connection con = conexion.Conexion();
+      ejecutor = con.createStatement();
+      rs = ejecutor.executeQuery("execute dbo.adquirirPlanEstudioCurso '" + pCurso +"'");
+    } catch (SQLException ex) {
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }  
+      
+    return rs;
+  }
+  
+  public boolean eliminarPlanEstudioCurso(String pCodigoCurso, int pNumeroPlanCurso) throws ClassNotFoundException {
+    boolean res = false;
+    try {
+      Connection con = conexion.Conexion();
+      String query = "dbo.eliminarPlanEstudioCurso @CodigoCurso = ?, @NumeroPlanEstudioCurso = ?";
+      CallableStatement consulta = con.prepareCall(query);
+      consulta.setString(1, pCodigoCurso);
+      consulta.setInt(2, pNumeroPlanCurso);
+      consulta.execute();
+      res = true;
+          
+    } catch (SQLException e) {
+        System.out.println(e);
+    } catch (InstantiationException | IllegalAccessException ex) {
+          Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+    return res;
+  }
+  
+  public ResultSet BuscarCursoBackup(String pCurso) {
+    Statement ejecutor;
+    ResultSet rs = null;
+    
+    try {
+      Connection con = conexion.Conexion();
+      ejecutor = con.createStatement();
+      rs = ejecutor.executeQuery("execute dbo.adquirirCursoBackup '" + pCurso +"'");
+    } catch (SQLException ex) {
+        Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        Logger.getLogger(PlanDeEstudioDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }  
+      
+    return rs;
+  } 
 
+  public boolean eliminarCurso(String pCodigoCurso) throws ClassNotFoundException {
+    boolean res = false;
+    try {
+      Connection con = conexion.Conexion();
+      String query = "dbo.eliminarCurso @CodigoCurso = ?";
+      CallableStatement consulta = con.prepareCall(query);
+      consulta.setString(1, pCodigoCurso);
+      consulta.execute();
+      res = true;
+    } catch (SQLException ex) {
+        System.out.println(ex);
+    } catch (InstantiationException | IllegalAccessException ex) {
+          Logger.getLogger(CursoDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+ 
+    return res;
+  }
 }

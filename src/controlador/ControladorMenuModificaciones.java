@@ -4,6 +4,8 @@ package controlador;
 import dao.CursoDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import vista.EliminarCurso;
+import vista.EliminarCursoDePlan;
 import vista.EliminarRequisitoCurso;
 import vista.MenuModificaciones;
 
@@ -29,6 +31,12 @@ public class ControladorMenuModificaciones implements ActionListener {
     if (e.getSource() == vista.btnEliminarRequisitoCurso) {
       eliminarRequisitoCurso();
     }
+    if (e.getSource() == vista.btnEliminarCursoDePlan) {
+      eliminarCursoDePlan();
+    }
+    if (e.getSource() == vista.btnEliminarCurso) {
+        eliminarCurso();
+    }
     if (e.getSource() == vista.btnVolver) {
       this.vista.setVisible(false);
     }    
@@ -41,5 +49,17 @@ public class ControladorMenuModificaciones implements ActionListener {
     controlador.vistaEliminarRequisitoCurso.setVisible(true);
   }
   
-    
+  public void eliminarCursoDePlan() {
+    EliminarCursoDePlan eliminar = new EliminarCursoDePlan();
+    CursoDAO dao = new CursoDAO();
+    ControladorCurso controlador = new ControladorCurso(eliminar, dao);
+    controlador.vistaEliminarCursoDePlan.setVisible(true);
+  }
+  
+  public void eliminarCurso() {
+    EliminarCurso eliminar = new EliminarCurso();
+    CursoDAO dao = new CursoDAO();
+    ControladorCurso controlador = new ControladorCurso(eliminar, dao);
+    controlador.vistaEliminarCurso.setVisible(true);
+  }
 }

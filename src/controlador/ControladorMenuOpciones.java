@@ -36,6 +36,7 @@ public class ControladorMenuOpciones implements ActionListener {
     this.vista.btnAsignarCursoRequisito.addActionListener(this);
     this.vista.btnConsultasAdicionales.addActionListener(this);
     this.vista.btnModificacionInformacion.addActionListener(this);
+    this.vista.btnSalir.addActionListener(this);
   }
   
   @Override
@@ -58,7 +59,8 @@ public class ControladorMenuOpciones implements ActionListener {
     if(e.getSource() == vista.btnModificacionInformacion) {
         mostrarConsultasModificacionInformacion();
     }
-    if (e.getSource() == vista.btnVolver) {
+    if (e.getSource() == vista.btnSalir) {
+        System.exit(0);
         this.vista.setVisible(false);
     }
   }
