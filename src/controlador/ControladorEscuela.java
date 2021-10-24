@@ -34,6 +34,7 @@ public class ControladorEscuela implements ActionListener {
         
     this.vistaRegistroEscuela.btnRegistrar.addActionListener(this);
     this.vistaRegistroEscuela.btnVolver.addActionListener(this);
+    this.vistaRegistroEscuela.btnLimpiar.addActionListener(this);
   }
   
   /**
@@ -44,6 +45,9 @@ public class ControladorEscuela implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     if (e.getSource() == vistaRegistroEscuela.btnRegistrar) {
         agregarEscuela();
+    }
+    if (e.getSource() == vistaRegistroEscuela.btnLimpiar) {
+        limpiarCampos();
     }
     if (e.getSource() == vistaRegistroEscuela.btnVolver) {
       this.vistaRegistroEscuela.setVisible(false);
@@ -61,11 +65,19 @@ public class ControladorEscuela implements ActionListener {
       if (resul != null) {
         JOptionPane.showMessageDialog(null,resul); 
       } else {
-        JOptionPane.showMessageDialog(vistaRegistroEscuela, "Ha sido posible registrar la escuela"
+        JOptionPane.showMessageDialog(vistaRegistroEscuela, "Ha sido posible registrar la escuela "
             + nombreEscuela + " exitosamente");
         }
     } catch (HeadlessException ex) {
       Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
     }
+  }
+  
+  /**
+   * Metodo que limpia los campos de texto
+   */
+  public void limpiarCampos() {
+    vistaRegistroEscuela.txtNombre.setText("");
+    vistaRegistroEscuela.txtCodigo.setText("");
   }
 }

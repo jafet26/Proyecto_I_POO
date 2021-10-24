@@ -48,6 +48,7 @@ public class ControladorPlanDeEstudio implements ActionListener {
         
     this.vistaRegistroPlanDeEstudio.btnRegistrar.addActionListener(this);
     this.vistaRegistroPlanDeEstudio.btnVolver.addActionListener(this);
+    this.vistaRegistroPlanDeEstudio.btnLimpiar.addActionListener(this);
   }
   
   /**
@@ -89,6 +90,9 @@ public class ControladorPlanDeEstudio implements ActionListener {
     if (e.getSource() == vistaRegistroPlanDeEstudio.btnRegistrar) {
       agregarPlanDeEstudio();
     }
+    if (e.getSource() == vistaRegistroPlanDeEstudio.btnLimpiar) {
+        limpiarCampos();
+    }
     if (e.getSource() == vistaConsultarPlanDeEstudio.btnBuscar) {
       consultarPlanDeEstudio();
     }
@@ -128,7 +132,8 @@ public class ControladorPlanDeEstudio implements ActionListener {
       if (resul != null) {
         JOptionPane.showMessageDialog(null,resul); 
       } else {
-        JOptionPane.showMessageDialog(vistaRegistroPlanDeEstudio, "Ha sido posible registrar la escuela");
+        JOptionPane.showMessageDialog(vistaRegistroPlanDeEstudio, "Ha sido posible registrar "
+            + " el plan de estudio " + codigoPlanDeEstudio + " en la escuela " + codigoEscuela);
       }
     } catch (HeadlessException | NumberFormatException ex) {
       Logger.getLogger(ControladorEscuela.class.getName()).log(Level.SEVERE, null, ex);
@@ -245,4 +250,13 @@ public class ControladorPlanDeEstudio implements ActionListener {
           + "correo");
     }
   } 
+  
+  /**
+   * Metodo que limpia los campos de texto
+   */
+  public void limpiarCampos() {
+    vistaRegistroPlanDeEstudio.txtFechaVigencia.setText("");
+    vistaRegistroPlanDeEstudio.txtCodigoPlan.setText("");
+    vistaRegistroPlanDeEstudio.txtCantidadSemestres.setText("");
+  }
 }

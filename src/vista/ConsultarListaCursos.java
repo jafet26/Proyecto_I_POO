@@ -59,12 +59,11 @@ public class ConsultarListaCursos extends javax.swing.JFrame {
             .addGroup(panelConsultaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelConsultaLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
+                    .addComponent(jScrollPane1)
                     .addGroup(panelConsultaLayout.createSequentialGroup()
                         .addComponent(btnVolver)
-                        .addContainerGap(869, Short.MAX_VALUE))))
+                        .addGap(0, 859, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panelConsultaLayout.setVerticalGroup(
             panelConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,8 +73,8 @@ public class ConsultarListaCursos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblTitulo)
                 .addGap(73, 73, 73)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

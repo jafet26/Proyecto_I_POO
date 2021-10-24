@@ -58,6 +58,7 @@ public class ControladorCurso implements ActionListener {
         
     this.vistaRegistroCurso.btnRegistrar.addActionListener(this);
     this.vistaRegistroCurso.btnVolver.addActionListener(this);
+    this.vistaRegistroCurso.btnLimpiar.addActionListener(this);
   }
   
   /**
@@ -167,6 +168,9 @@ public class ControladorCurso implements ActionListener {
   public void actionPerformed(ActionEvent e) {
     if (e.getSource() == vistaRegistroCurso.btnRegistrar) {
         agregarCurso();
+    }
+    if (e.getSource() == vistaRegistroCurso.btnLimpiar) {
+        limpiarCampos();
     }
     if (e.getSource() == vistaAsignarCursoRequisito.btnRegistrarRequisito) {
         agregarCursoRequisito();
@@ -488,5 +492,16 @@ public class ControladorCurso implements ActionListener {
     } catch (SQLException ex) {
        JOptionPane.showMessageDialog(null,ex); 
     }
+  }
+  
+  /**
+   * Metodo que limpia los campos de texto
+   */
+  public void limpiarCampos() {
+    vistaRegistroCurso.txtBloqueSemestral.setText("");
+    vistaRegistroCurso.txtCodigoCurso.setText("");
+    vistaRegistroCurso.txtCreditos.setText("");
+    vistaRegistroCurso.txtHorasLectivas.setText("");
+    vistaRegistroCurso.txtNombreCurso.setText("");
   }
 }
