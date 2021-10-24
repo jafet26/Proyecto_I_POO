@@ -1,19 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
 /**
- *
- * @author USUARIO
+ * Vista del menu de modificaciones a la informacion
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class MenuModificaciones extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuModificaciones
-     */
     public MenuModificaciones() {
         initComponents();
     }

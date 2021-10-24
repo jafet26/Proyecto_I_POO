@@ -1,60 +1,63 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
 import dao.CursoDAO;
 
 /**
- *
- * @author USUARIO
+ * Vista para agregar el requisito o correquisito a un curso
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class AsignarCursoRequisito extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AsignarCursosAPlanDeEstudios
-     */
-    public AsignarCursoRequisito() {
-        initComponents();
-        
-        llenarCbxCursos();
-        llenarCbxCursosRequisitos();
-        llenarCbxCursosCorrequisitos();
-        llenarEscuela();
-        llenarPlanEstudio();
-    }
+  public AsignarCursoRequisito() {
+    initComponents();    
+    llenarCbxCursos();
+    llenarCbxCursosRequisitos();
+    llenarCbxCursosCorrequisitos();
+    llenarEscuela();
+    llenarPlanEstudio();
+  }
 
-    public void llenarCbxCursos() {
-      CursoDAO dao = new CursoDAO();
+  /**
+   * Metodo para llenar el ComboBox de los cursos
+   */
+  public void llenarCbxCursos() {
+    CursoDAO dao = new CursoDAO();
+    cbxCodigoCurso.setModel(dao.llenarComboBoxCodigoCurso());
+  }
 
-      cbxCodigoCurso.setModel(dao.llenarComboBoxCodigoCurso());
-    }
+  /**
+   * Metodo para llenar el ComboBox de los cursos Requisitos
+   */
+  public void llenarCbxCursosRequisitos() {
+    CursoDAO dao = new CursoDAO();
+    cbxCodigosCursosRequisito.setModel(dao.llenarComboBoxCodigoCursoRequisito());
+  }
 
-    public void llenarCbxCursosRequisitos() {
+  /**
+   * Metodo para llenar el ComboBox de los cursos Correquisitos
+   */
+  public void llenarCbxCursosCorrequisitos() {
+    CursoDAO dao = new CursoDAO();
+    cbxCursoCorrequisito.setModel(dao.llenarComboBoxCursoCorrequisito());
+  }
 
-      CursoDAO dao = new CursoDAO();
-      cbxCodigosCursosRequisito.setModel(dao.llenarComboBoxCodigoCursoRequisito());
-    }
+  /**
+   * Metodo para llenar el ComboBox de las escuelas
+   */
+  public void llenarEscuela() {
+    CursoDAO dao = new CursoDAO();
+    cbxEscuelas.setModel(dao.llenarComboBoxEscuela());
+  }
 
-    public void llenarCbxCursosCorrequisitos() {
-
-      CursoDAO dao = new CursoDAO();
-      cbxCursoCorrequisito.setModel(dao.llenarComboBoxCursoCorrequisito());
-    }
-
-    public void llenarEscuela() {
-
-      CursoDAO dao = new CursoDAO();
-      cbxEscuelas.setModel(dao.llenarComboBoxEscuela());
-    }
-
-    public void llenarPlanEstudio() {
-
-      CursoDAO dao = new CursoDAO();
-      cbxPlanEstudioCurso.setModel(dao.llenarComboBoxPlanDeEstudio());
-    }
+  /**
+   * Metodo para llenar el ComboBox de los planes de estudio
+   */
+  public void llenarPlanEstudio() {
+    CursoDAO dao = new CursoDAO();
+    cbxPlanEstudioCurso.setModel(dao.llenarComboBoxPlanDeEstudio());
+  }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -75,7 +78,6 @@ public class AsignarCursoRequisito extends javax.swing.JFrame {
         btnRegistrarCorrequisito = new javax.swing.JButton();
         lblCodigoPlan1 = new javax.swing.JLabel();
         cbxPlanEstudioCurso = new javax.swing.JComboBox<>();
-        txtNumeroPlanEstudioCurso = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -204,10 +206,7 @@ public class AsignarCursoRequisito extends javax.swing.JFrame {
                             .addComponent(lblCodigoPlan))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelRegistroCursoAPlanLayout.createSequentialGroup()
-                                .addComponent(cbxPlanEstudioCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtNumeroPlanEstudioCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbxPlanEstudioCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbxCodigoCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23))))
@@ -224,11 +223,9 @@ public class AsignarCursoRequisito extends javax.swing.JFrame {
                     .addComponent(lblNombreEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
-                .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblCodigoPlan1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cbxPlanEstudioCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtNumeroPlanEstudioCurso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCodigoPlan1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxPlanEstudioCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(panelRegistroCursoAPlanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -346,6 +343,5 @@ public class AsignarCursoRequisito extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombreEscuela;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelRegistroCursoAPlan;
-    public javax.swing.JTextField txtNumeroPlanEstudioCurso;
     // End of variables declaration//GEN-END:variables
 }

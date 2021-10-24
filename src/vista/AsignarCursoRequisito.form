@@ -87,11 +87,7 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="cbxPlanEstudioCurso" min="-2" pref="116" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtNumeroPlanEstudioCurso" min="-2" pref="113" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="cbxPlanEstudioCurso" min="-2" pref="116" max="-2" attributes="0"/>
                               <Component id="cbxEscuelas" min="-2" pref="352" max="-2" attributes="0"/>
                               <Component id="cbxCodigoCurso" min="-2" pref="116" max="-2" attributes="0"/>
                           </Group>
@@ -114,12 +110,9 @@
                       <Component id="cbxEscuelas" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblCodigoPlan1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="cbxPlanEstudioCurso" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="txtNumeroPlanEstudioCurso" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblCodigoPlan1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="cbxPlanEstudioCurso" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -337,11 +330,6 @@
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtNumeroPlanEstudioCurso">
-          <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>

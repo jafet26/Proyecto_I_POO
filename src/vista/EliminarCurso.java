@@ -1,32 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
 import dao.CursoDAO;
 
 /**
- *
- * @author USUARIO
+ * Vista para eliminar un curso
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class EliminarCurso extends javax.swing.JFrame {
+  public EliminarCurso() {
+    initComponents();    
+    llenarCbxCursos();
+  }
 
-    /**
-     * Creates new form EliminarRequisitoCurso
-     */
-    public EliminarCurso() {
-        initComponents();
-        
-        llenarCbxCursos();
-    }
-
-    public void llenarCbxCursos() {
-      CursoDAO dao = new CursoDAO();
-
-      cbxCurso.setModel(dao.llenarComboBoxCodigoCursoBackup());
-    }
+  /**
+   *Metodo para llenar el ComboBox de los cursos
+   */
+  public void llenarCbxCursos() {
+    CursoDAO dao = new CursoDAO();
+    cbxCurso.setModel(dao.llenarComboBoxCodigoCursoBackup());
+  }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -89,7 +82,7 @@ public class EliminarCurso extends javax.swing.JFrame {
 
         lblNombreEscuela1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         lblNombreEscuela1.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreEscuela1.setText("Informacion del curso");
+        lblNombreEscuela1.setText("Seleccione en la tabla el curso a eliminar");
 
         btnBuscar.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         btnBuscar.setText("Mostrar Informacion");
@@ -114,10 +107,8 @@ public class EliminarCurso extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
-                .addContainerGap(619, Short.MAX_VALUE)
-                .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEliminarCurso)
-                    .addComponent(btnBuscar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBuscar)
                 .addGap(24, 24, 24))
             .addGroup(panelEliminarLayout.createSequentialGroup()
                 .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +119,9 @@ public class EliminarCurso extends javax.swing.JFrame {
                         .addComponent(cbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelEliminarLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblNombreEscuela1)))
+                        .addComponent(lblNombreEscuela1)
+                        .addGap(453, 453, 453)
+                        .addComponent(btnEliminarCurso)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelEliminarLayout.setVerticalGroup(
@@ -147,10 +140,10 @@ public class EliminarCurso extends javax.swing.JFrame {
                     .addComponent(cbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(btnBuscar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(btnEliminarCurso)
-                .addGap(9, 9, 9)
-                .addComponent(lblNombreEscuela1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombreEscuela1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminarCurso))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))

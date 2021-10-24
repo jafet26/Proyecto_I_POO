@@ -3,18 +3,20 @@ package vista;
 import dao.PlanDeEstudioDAO;
 
 /**
- *
- * @author USUARIO
+ * Vista para consultar el plan de estudio de un curso en particular
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class ConsultarPlanDeEstudioCursoParticular extends javax.swing.JFrame {
+  public ConsultarPlanDeEstudioCursoParticular() {
+    initComponents();
+    llenarCbxEscuelas();
+  }
 
-   
-    public ConsultarPlanDeEstudioCursoParticular() {
-        initComponents();
-        llenarCbxEscuelas();
-    }
-
-    public void llenarCbxEscuelas() {
+  /**
+   * Metodo para llenar el ComboBox de escuelas
+   */
+  public void llenarCbxEscuelas() {
     PlanDeEstudioDAO dao = new PlanDeEstudioDAO();
     cbxCursos.setModel(dao.llenarComboBoxCursos());
   }

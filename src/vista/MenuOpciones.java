@@ -1,27 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
- *
- * @author Daniel Vaglio 
+ * Vista del menu principal de opciones
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class MenuOpciones extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuOpciones
-     */
     public MenuOpciones() {
         initComponents();
-        
-        //btnRegistrarEscuela.setText("Registrar Escuela o Area Academica");
+      
         
     }
 
@@ -76,7 +64,7 @@ public class MenuOpciones extends javax.swing.JFrame {
         });
 
         btnAsignarCursoRequisito.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        btnAsignarCursoRequisito.setText("Asignar Cursos Requisitos a un Curso");
+        btnAsignarCursoRequisito.setText("Asignar Requisitos y Correquisitos a un Curso");
         btnAsignarCursoRequisito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAsignarCursoRequisitoActionPerformed(evt);
@@ -119,7 +107,7 @@ public class MenuOpciones extends javax.swing.JFrame {
                             .addComponent(btnModificacionInformacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRegistrarEscuela, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRegistrarPlanEstudios, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addGap(18, 27, Short.MAX_VALUE)
                         .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAsignarCursoRequisito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRegistrarCurso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -127,21 +115,20 @@ public class MenuOpciones extends javax.swing.JFrame {
                         .addGap(48, 48, 48))
                     .addGroup(panelMenuLayout.createSequentialGroup()
                         .addComponent(btnSalir)
-                        .addGap(87, 87, 87)
-                        .addComponent(lblTitulo)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(panelMenuLayout.createSequentialGroup()
+                .addGap(176, 176, 176)
+                .addComponent(lblTitulo)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMenuLayout.createSequentialGroup()
-                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
-                        .addComponent(lblTitulo)
-                        .addGap(32, 32, 32)))
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(lblTitulo)
+                .addGap(18, 18, 18)
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrarCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrarEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))

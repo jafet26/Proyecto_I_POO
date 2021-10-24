@@ -1,32 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
 import dao.CursoDAO;
 
 /**
- *
- * @author USUARIO
+ * Vista para eliminar un curso de un plan de estudio
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class EliminarCursoDePlan extends javax.swing.JFrame {
+  public EliminarCursoDePlan() {
+    initComponents();    
+    llenarCbxCursos();
+  }
 
-    /**
-     * Creates new form EliminarRequisitoCurso
-     */
-    public EliminarCursoDePlan() {
-        initComponents();
-        
-        llenarCbxCursos();
-    }
-
-    public void llenarCbxCursos() {
-      CursoDAO dao = new CursoDAO();
-
-      cbxCurso.setModel(dao.llenarComboBoxCodigoCurso());
-    }
+  /**
+   * Metodo para llenar el ComboBox de los cursos
+   */
+  public void llenarCbxCursos() {
+    CursoDAO dao = new CursoDAO();
+    cbxCurso.setModel(dao.llenarComboBoxCodigoCurso());
+  }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -80,7 +73,7 @@ public class EliminarCursoDePlan extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaInformeCurso);
 
         btnEliminarPlanEstudioCurso.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
-        btnEliminarPlanEstudioCurso.setText("Eliminar Plan");
+        btnEliminarPlanEstudioCurso.setText("Eliminar Curso del Plan");
         btnEliminarPlanEstudioCurso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarPlanEstudioCursoActionPerformed(evt);
@@ -133,7 +126,7 @@ public class EliminarCursoDePlan extends javax.swing.JFrame {
                         .addGap(24, 24, 24))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
                         .addComponent(btnEliminarPlanEstudioCurso)
-                        .addGap(335, 335, 335))))
+                        .addGap(256, 256, 256))))
         );
         panelEliminarLayout.setVerticalGroup(
             panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

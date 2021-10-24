@@ -1,13 +1,12 @@
 package logicadenegocios;
 
-import java.time.LocalDate;
-
 /**
- *
- * @author Daniel Vaglio
+ * Abstraccion de la clase Curso
+ * Contiene la informacion de los planes de estudio
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class PlanDeEstudios {
-    
   private int numeroPlan;
   private String fechaEntradaVigente;
   private int cantidadSemestres;
@@ -15,8 +14,7 @@ public class PlanDeEstudios {
   /*
   * Metodo Constructor Vacio
   */  
-  public PlanDeEstudios(){
-      
+  public PlanDeEstudios(){ 
   }
   
   /**
@@ -26,68 +24,52 @@ public class PlanDeEstudios {
    * @param pCantidadSemestres indica la cantidad de semestre que contiene el plan
    */
   public PlanDeEstudios(int pNumeroPlan, String pFechaEntradaVigente, int pCantidadSemestres) {
-    
     pNumeroPlan = numeroPlan;
     pFechaEntradaVigente = fechaEntradaVigente;
-    pCantidadSemestres = cantidadSemestres;
-    
+    pCantidadSemestres = cantidadSemestres; 
   }
 
   /**
    * Metodos GETTERS
+     * @return la informacion correspondiente a cada atributo de la clase
    */
   public int getNumeroPlan() {
-    
     return numeroPlan;
-      
   }
 
   public String getFechaEntradaVigente() {
-   
     return fechaEntradaVigente;
-    
   }
 
   public int getCantidadSemestres() {
-    
     return cantidadSemestres;
-    
   }
   
   /**
    * Metodos SETTERS
    */
   public void setNumeroPlan(int pNumeroPlan) {
-      
-    pNumeroPlan = numeroPlan;
-    
+    pNumeroPlan = numeroPlan; 
   }
   
-  public void setFechaEntradaVigencia(String pFechaEntradaVigente) {
-      
+  public void setFechaEntradaVigencia(String pFechaEntradaVigente) { 
     pFechaEntradaVigente = fechaEntradaVigente;
-    
   }
   
   public void setCantidadSemestres(int pCantidadSemestres) {
-      
     pCantidadSemestres = cantidadSemestres;
-    
   }
   
   /**
    * Metodo ToString()
    * @return la informacion del Plan de Estudios contenida en una cadena de caracteres
    */
+  @Override
   public String toString() {
-      
     String msg;
     msg = "Numero de Plan: " + numeroPlan + "\n";
     msg += "Fecha de vigencia: " + fechaEntradaVigente + "\n";
     msg += "Cantidad de Semestres del plan: " + cantidadSemestres + "\n";
-    
     return msg;
-    
-  }
-  
+  } 
 }

@@ -1,32 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
 import dao.CursoDAO;
 
 /**
- *
- * @author USUARIO
+ * Vista para eliminar la relacion de un plan de estudio y un curso 
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class EliminarRequisitoCurso extends javax.swing.JFrame {
+  public EliminarRequisitoCurso() {
+    initComponents();    
+    llenarCbxCursos();
+    llenarCbxPlanes();
+  }
 
-    /**
-     * Creates new form EliminarRequisitoCurso
-     */
-    public EliminarRequisitoCurso() {
-        initComponents();
-        
-        llenarCbxCursos();
-    }
-
-    public void llenarCbxCursos() {
-      CursoDAO dao = new CursoDAO();
-
-      cbxCurso.setModel(dao.llenarComboBoxCodigoCurso());
-    }
+  /**
+   * Metodo que llena los cursos en un ComboBox
+   */
+  public void llenarCbxCursos() {
+    CursoDAO dao = new CursoDAO();
+    cbxCurso.setModel(dao.llenarComboBoxCodigoCurso());
+  }
+    
+  /**
+   * Metodo que llena los planes en un combobox
+   */
+  public void llenarCbxPlanes() {
+    CursoDAO dao = new CursoDAO();
+    cbxPlanEstudio.setModel(dao.llenarComboBoxPlanDeEstudio());
+  }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -41,6 +43,8 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
         btnEliminarRequisito = new javax.swing.JButton();
         lblNombreEscuela1 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
+        cbxPlanEstudio = new javax.swing.JComboBox<>();
+        lblNombreEscuela2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,7 +93,7 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
 
         lblNombreEscuela1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         lblNombreEscuela1.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreEscuela1.setText("Seleccione el Requisito que desea eliminar: ");
+        lblNombreEscuela1.setText("Seleccione el plan de estudio que desea eliminar: ");
 
         btnBuscar.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         btnBuscar.setText("Buscar Requisitos del Curso");
@@ -99,40 +103,51 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
             }
         });
 
+        cbxPlanEstudio.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        cbxPlanEstudio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxPlanEstudioActionPerformed(evt);
+            }
+        });
+
+        lblNombreEscuela2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        lblNombreEscuela2.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombreEscuela2.setText("Seleccione en la tabla el plan de estudio que coincida con su seleccion anterior: ");
+
         javax.swing.GroupLayout panelEliminarLayout = new javax.swing.GroupLayout(panelEliminar);
         panelEliminar.setLayout(panelEliminarLayout);
         panelEliminarLayout.setHorizontalGroup(
             panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEliminarLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(lblNombreEscuela)
-                .addGap(18, 18, 18)
-                .addComponent(cbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(panelEliminarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
-                        .addComponent(btnVolver)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
-                        .addComponent(lblTitulo)
-                        .addGap(169, 169, 169))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addContainerGap())
-                    .addGroup(panelEliminarLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(lblNombreEscuela1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnEliminarRequisito)
                         .addGap(319, 319, 319))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
-                        .addComponent(btnBuscar)
-                        .addGap(24, 24, 24))))
+                        .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelEliminarLayout.createSequentialGroup()
+                                .addComponent(btnVolver)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblTitulo))
+                            .addGroup(panelEliminarLayout.createSequentialGroup()
+                                .addComponent(lblNombreEscuela)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cbxCurso, 0, 273, Short.MAX_VALUE)))
+                            .addGroup(panelEliminarLayout.createSequentialGroup()
+                                .addComponent(lblNombreEscuela1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbxPlanEstudio, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(169, 169, 169))
+                    .addGroup(panelEliminarLayout.createSequentialGroup()
+                        .addComponent(lblNombreEscuela2)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panelEliminarLayout.setVerticalGroup(
             panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,15 +159,19 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
                     .addGroup(panelEliminarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57)
-                .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNombreEscuela, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(btnBuscar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(lblNombreEscuela1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addGroup(panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombreEscuela1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbxPlanEstudio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblNombreEscuela2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEliminarRequisito)
@@ -188,6 +207,10 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void cbxPlanEstudioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPlanEstudioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxPlanEstudioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,9 +252,11 @@ public class EliminarRequisitoCurso extends javax.swing.JFrame {
     public javax.swing.JButton btnEliminarRequisito;
     public javax.swing.JButton btnVolver;
     public javax.swing.JComboBox<String> cbxCurso;
+    public javax.swing.JComboBox<String> cbxPlanEstudio;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNombreEscuela;
     private javax.swing.JLabel lblNombreEscuela1;
+    private javax.swing.JLabel lblNombreEscuela2;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelEliminar;
     public javax.swing.JTable tablaInformeCursosRequisito;

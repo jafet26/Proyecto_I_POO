@@ -1,31 +1,24 @@
 package vista;
 
 import dao.PlanDeEstudioDAO;
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
-import logicadenegocios.Escuela;
 
 /**
- *
- * @author USUARIO
+ * Vista del registro de un plan de estudios
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
-
-  /** Creates new form RegistrarPlanDeEstudios */
   public RegistrarPlanDeEstudios() {
     initComponents();
     llenarCbxEscuelas();
   }
   
+  /**
+   * Metodo para llenar ComboBox de Escuelas
+   */
   public void llenarCbxEscuelas() {
     PlanDeEstudioDAO dao = new PlanDeEstudioDAO();
     cbxEscuelas.setModel(dao.llenarComboBox());
-  }
-
-  public void volverMenu(){
-    MenuOpciones ventana = new MenuOpciones();
-    ventana.setVisible(false);
-    this.dispose();
   }
     
     @SuppressWarnings("unchecked")
@@ -46,6 +39,7 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
         txtCantidadSemestres = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
+        lblVigenciaPlan2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,15 +59,15 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
 
         lblNombreEscuela.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblNombreEscuela.setForeground(new java.awt.Color(255, 255, 255));
-        lblNombreEscuela.setText("Escuela propietaria del curso:");
+        lblNombreEscuela.setText("Codigo Escuela propietaria del plan:");
 
         lblCodigoPlan.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblCodigoPlan.setForeground(new java.awt.Color(255, 255, 255));
-        lblCodigoPlan.setText("Código del plan de estudios: ");
+        lblCodigoPlan.setText("*Número del plan de estudios: ");
 
         lblNotaCodigo.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 12)); // NOI18N
         lblNotaCodigo.setForeground(new java.awt.Color(255, 255, 255));
-        lblNotaCodigo.setText("*Código: Indique su código únicamente ingresando cuatro digitos númericos. ");
+        lblNotaCodigo.setText("*Número: Indique su código únicamente ingresando cuatro digitos númericos. ");
 
         lblVigenciaPlan.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         lblVigenciaPlan.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,6 +106,10 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
             }
         });
 
+        lblVigenciaPlan2.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        lblVigenciaPlan2.setForeground(new java.awt.Color(255, 255, 255));
+        lblVigenciaPlan2.setText("(dd/MM/yy)");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -119,37 +117,39 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblNotaCodigo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                 .addComponent(btnLimpiar)
                 .addGap(110, 110, 110))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(364, 364, 364)
+                        .addComponent(txtCantidadSemestres, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnVolver))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblVigenciaPlan)
-                                    .addComponent(lblCodigoPlan))
-                                .addGap(25, 25, 25)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaVigencia, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(lblNombreEscuela)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblVigenciaPlan1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCantidadSemestres, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(211, 211, 211))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(199, 199, 199)
-                        .addComponent(lblTitulo)))
+                        .addComponent(lblTitulo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCodigoPlan)
+                            .addComponent(lblNombreEscuela)
+                            .addComponent(lblVigenciaPlan)
+                            .addComponent(lblVigenciaPlan1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodigoPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtFechaVigencia, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblVigenciaPlan2))
+                            .addComponent(cbxEscuelas, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(211, 211, 211)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -172,14 +172,15 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblVigenciaPlan, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFechaVigencia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtFechaVigencia, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblVigenciaPlan2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblVigenciaPlan1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCantidadSemestres, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addGap(42, 42, 42)
                         .addComponent(lblNotaCodigo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -206,9 +207,7 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        //String opcion = (String) cbxEscuelas.getSelectedItem();
-        //int opcion = cbxEscuelas.getSelectedIndex();
-        //JOptionPane.showMessageDialog(null,"opcion " + opcion);
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
@@ -266,6 +265,7 @@ public class RegistrarPlanDeEstudios extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblVigenciaPlan;
     private javax.swing.JLabel lblVigenciaPlan1;
+    private javax.swing.JLabel lblVigenciaPlan2;
     public javax.swing.JTextField txtCantidadSemestres;
     public javax.swing.JTextField txtCodigoPlan;
     public javax.swing.JTextField txtFechaVigencia;

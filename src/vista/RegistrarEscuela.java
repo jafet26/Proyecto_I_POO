@@ -1,30 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package vista;
 
-import controlador.ControladorEscuela;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import logicadenegocios.Escuela;
-import proyecto_i_poo.Conexion;
-
 /**
- *
- * @author USUARIO
+ * Vista del registro de una escuela o area academica
+ * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @version Proyecto Programado I
  */
 public class RegistrarEscuela extends javax.swing.JFrame {
-
-    /**
-     * Creates new form AgregarEscuela
-     */
-    public RegistrarEscuela() {
-      initComponents();
-       
-    
+  public RegistrarEscuela() {
+  initComponents();
    
     } 
 
