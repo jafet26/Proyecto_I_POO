@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * Abstraccion de la clase ControladorMenuConsultasAdicionales
  * Clase que utiliza las funcionalidades de la vista del menu de consultas adicionales
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ControladorMenuConsultasAdicionales implements ActionListener {

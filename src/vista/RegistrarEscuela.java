@@ -2,7 +2,7 @@ package vista;
 
 /**
  * Vista del registro de una escuela o area academica
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class RegistrarEscuela extends javax.swing.JFrame {

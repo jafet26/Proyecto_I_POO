@@ -4,7 +4,7 @@ import dao.PlanDeEstudioDAO;
 
 /**
  * Vista para consultar el plan de estudio de un curso en particular
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ConsultarPlanDeEstudioCursoParticular extends javax.swing.JFrame {

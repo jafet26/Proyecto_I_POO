@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * Abstraccion de la clase EscuelaDAO
  * Clase que implementa las funcionales de la Escuela en el sistema
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class EscuelaDAO { 

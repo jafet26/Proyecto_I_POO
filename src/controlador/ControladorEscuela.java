@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 /**
  * Abstraccion de la clase ControladorEscuela 
  * Para utilizar las funcionalidades de implementacion de las Escuelas del sistema
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I 
  */
 public class ControladorEscuela implements ActionListener {

@@ -4,7 +4,7 @@ import dao.PlanDeEstudioDAO;
 
 /**
  * Vista del registro de un plan de estudios
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class RegistrarPlanDeEstudios extends javax.swing.JFrame {

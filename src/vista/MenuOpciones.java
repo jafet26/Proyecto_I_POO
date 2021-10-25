@@ -2,7 +2,7 @@ package vista;
 
 /**
  * Vista del menu principal de opciones
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class MenuOpciones extends javax.swing.JFrame {

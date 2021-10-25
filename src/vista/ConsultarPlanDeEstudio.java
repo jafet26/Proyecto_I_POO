@@ -7,7 +7,7 @@ import javax.swing.JTable;
 
 /**
  * Vista para consultar el plan de estudio
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ConsultarPlanDeEstudio extends javax.swing.JFrame {

@@ -3,7 +3,7 @@ package logicadenegocios;
 /**
  * Abstraccion de la clase Curso
  * Contiene la informacion de los planes de estudio
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class PlanDeEstudios {
@@ -45,9 +45,8 @@ public class PlanDeEstudios {
     return cantidadSemestres;
   }
   
-  /**
-   * Metodos SETTERS
-   */
+  
+  //Metodos SETTERS
   public void setNumeroPlan(int pNumeroPlan) {
     pNumeroPlan = numeroPlan; 
   }

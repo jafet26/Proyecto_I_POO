@@ -16,7 +16,7 @@ import javax.swing.DefaultComboBoxModel;
  * Clase utilizada para implementar los procedimientos creados en SQL para las diversas
  * funcionalidades de los cursos en el sistema
  * 
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class CursoDAO {

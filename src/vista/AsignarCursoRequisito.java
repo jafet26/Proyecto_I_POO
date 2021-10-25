@@ -5,7 +5,7 @@ import dao.CursoDAO;
 
 /**
  * Vista para agregar el requisito o correquisito a un curso
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class AsignarCursoRequisito extends javax.swing.JFrame {

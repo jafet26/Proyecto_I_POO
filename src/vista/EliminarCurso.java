@@ -4,7 +4,7 @@ import dao.CursoDAO;
 
 /**
  * Vista para eliminar un curso
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class EliminarCurso extends javax.swing.JFrame {

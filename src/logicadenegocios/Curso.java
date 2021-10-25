@@ -3,7 +3,7 @@ package logicadenegocios;
 /**
  * Abstraccion de la clase Curso
  * Contiene la informacion de los cursos
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class Curso {
@@ -57,9 +57,8 @@ public class Curso {
     return numeroBloqueSemestre;
   }
   
-  /**
-   * Metodos SETTERS
-   */
+  
+  //Metodos SETTERS
   public void setCodigoCurso(String pCodigoCurso) {   
     pCodigoCurso = codigoCurso; 
   }

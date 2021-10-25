@@ -4,7 +4,7 @@ import dao.CursoDAO;
 
 /**
  * Vista para consultar el correquisito de un curso
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ConsultarCursosCorrequisito extends javax.swing.JFrame {

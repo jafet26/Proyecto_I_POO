@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * Abstraccion de la clase ControladorPlanDeEstudio
  * La clase hace el uso de las funcionalidades que tienen los planes de estudio en el sistema
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ControladorPlanDeEstudio implements ActionListener {

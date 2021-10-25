@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 /**
  * Abstraccion de la clase ControladorMenuOpciones
  * Se utilizan las funcionalidades del menu principal de opciones
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ControladorMenuOpciones implements ActionListener {

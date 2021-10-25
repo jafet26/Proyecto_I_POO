@@ -4,7 +4,7 @@ import dao.CursoDAO;
 
 /**
  * Vista para eliminar un curso de un plan de estudio
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class EliminarCursoDePlan extends javax.swing.JFrame {

@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 /**
  * Abstraccion de la clase ControladorMenuModificaciones
  * Utiliza las funcionalidades del menu de modificaciones
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  */
 public class ControladorMenuModificaciones implements ActionListener {  
   public MenuModificaciones vista;

@@ -2,7 +2,7 @@ package vista;
 
 /**
  * Vista del menu de consultas adicionales
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class MenuConsultasAdicionales extends javax.swing.JFrame {

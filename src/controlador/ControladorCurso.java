@@ -28,7 +28,7 @@ import javax.swing.table.DefaultTableModel;
  * Abstraccion de la clase ControladorCurso
  * Para utilizar las funcionalidades que se implementan en los cursos a nivel de GUI
  * 
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ControladorCurso implements ActionListener {
@@ -389,7 +389,7 @@ public class ControladorCurso implements ActionListener {
   
   /**
    * Metodo para eliminar un curso de un plan de estudio
-   * @throws ClassNotFoundException 
+   * @throws ClassNotFoundException si el metodo no realiza la conexion con los parametros recibidos
    */
   public void eliminarPlanEstudioCurso() throws ClassNotFoundException {
     int seleccion = vistaEliminarCursoDePlan.tablaInformeCurso.getSelectedRow();
@@ -436,7 +436,7 @@ public class ControladorCurso implements ActionListener {
   
   /**
    * Metodo que elimina un curso
-   * @throws ClassNotFoundException 
+   * @throws ClassNotFoundException si el metodo no realiza la conexion con los parametros recibidos
    */
   public void eliminarCurso() throws ClassNotFoundException{
     int seleccion = vistaEliminarCurso.tablaInformeCursosPlan.getSelectedRow();

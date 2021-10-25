@@ -3,7 +3,7 @@ package logicadenegocios;
 /**
  * Abstraccion de la clase Escuela 
  * Contiene la informacion de las Escuelas o Areas Academicas
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class Escuela {
@@ -38,9 +38,8 @@ public class Escuela {
     return nombreEscuela;
   }
   
-  /**
-   * Metodos SETTERS
-   */
+ 
+  // Metodos SETTERS
   public void setCodigo(String pCodigo) {
     pCodigo = codigo;
   }

@@ -3,7 +3,7 @@ package vista;
 
 /**
  * Vista para consultar el listado de cursos
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class ConsultarListaCursos extends javax.swing.JFrame {

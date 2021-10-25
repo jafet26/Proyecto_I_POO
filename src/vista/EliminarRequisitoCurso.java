@@ -4,7 +4,7 @@ import dao.CursoDAO;
 
 /**
  * Vista para eliminar la relacion de un plan de estudio y un curso 
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class EliminarRequisitoCurso extends javax.swing.JFrame {

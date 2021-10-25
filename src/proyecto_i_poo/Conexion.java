@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 /**
  * Abstraccion de la clase Conexion
  * Clase que realiza la conexion a la base de datos en SQL Server
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class Conexion {

@@ -37,7 +37,7 @@ import java.util.logging.Logger;
 /**
  * Abstraccion de la clase PlanDeEstudioDAO
  * Implementa las funciones que se utilizan para la gestion de los planes de estudio del sistema
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class PlanDeEstudioDAO {

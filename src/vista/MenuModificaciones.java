@@ -3,7 +3,7 @@ package vista;
 
 /**
  * Vista del menu de modificaciones a la informacion
- * @author Daniel Vaglio Fallas & Jafet Chavarria Moreno
+ * @author Daniel Vaglio Fallas y Jafet Chavarria Moreno
  * @version Proyecto Programado I
  */
 public class MenuModificaciones extends javax.swing.JFrame {
